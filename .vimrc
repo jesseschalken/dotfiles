@@ -1,5 +1,5 @@
 if has('win32') || has('win64')
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 endif
 
 filetype plugin indent on "no 'indent'
@@ -17,6 +17,7 @@ set autoindent
 set autoread
 set background=dark
 set backspace=indent,eol,start
+set encoding=utf-8
 set fileformats=unix,dos,mac
 set grepprg=grep\ -nH\ $*
 set guifont=Consolas:h12:b
@@ -27,12 +28,17 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
+set listchars=tab:»\ ,eol:¬
 set more
 set mouse=a
+set mousefocus
 set mousemodel=extend
 set nocompatible
+set nocul
 set noerrorbells
+set nolist
 set nospell
+set noswapfile
 set number
 set ruler
 set shell=bash
@@ -41,16 +47,10 @@ set showcmd
 set showmatch
 set showmode
 set showtabline=2
-set tabstop=2
-set shiftwidth=2
 set spelllang=en_au,en
+set tabstop=2
 set ttyfast
 set wildmenu
-set noswapfile
+set winminheight=0
+set winminwidth=0
 syntax on
-
-if has('gui')
-  let g:solarized_contrast="high"
-  colorscheme solarized
-  set background=light
-endif
