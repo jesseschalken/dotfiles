@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/jesse/dev'
+let g:netrw_dirhist_2='/home/jesse/dev/home'
+let g:netrw_dirhist_3='/home/jesse/dev/home/jesse'
+let g:netrw_dirhist_4='/home/jesse/dev/home/jesse/src'
+let g:netrw_dirhist_5='/home/jesse/dev/home/jesse/src/sitebuilder'
+let g:netrw_dirhist_6='/home/jesse/dev/home/jesse/src/sitebuilder/infoforms'

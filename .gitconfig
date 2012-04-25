@@ -1,0 +1,50 @@
+[alias]
+	b   = branch
+	ci  = commit
+	cia = commit -a
+	ciam = commit -a -m
+	co  = checkout
+	d   = diff -w
+	ds  = diff -w --stat
+	di  = diff -w --cached
+	dis = diff -w --cached --stat
+	st  = status
+	l   = log
+	sl  = log --oneline
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
+	meld = !~/git-meld/git-meld.pl
+[user]
+	name = Jesse Schalken
+	email = jesse@ivt.com.au
+[color]
+	ui = true
+	branch = true
+	status = true
+	diff = true
+	interactive = true
+	pager = true
+	status = true
+[core]
+	whitespace = -blank-at-eol, -space-before-tab, -indent-with-non-tab, -tab-in-indent, -blank-at-eof, -trailing-space, -cr-at-eol
+	pager = less -FXRS -x2
+	editor = vim
+[push]
+	default = tracking
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	file-view-vpane-position = 940
+	main-window-view = HistoryView
+	file-view-hpane-position = 274
+	history-view-vpane-position = 659
+[mergetool "mymeld"]
+	cmd = "meld $LOCAL $BASE & meld $BASE $REMOTE & gvim $MERGED"
+[difftool "meld"]
+	cmd = meld foo bar &
+[merge]
+	conflictstyle = diff3
+[gui]
+	fontui = -family \"DejaVu Sans\" -size 8 -weight bold -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+	diffopts = -w
