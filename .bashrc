@@ -1,9 +1,5 @@
-# .bashrc
+PS1='\[\033[30;47m\]\w\[\033[00m\] \[\033[01;34;44m\]\$\[\033[00m\] '
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+eval "$(dircolors -b /etc/DIR_COLORS)"
 
-# User specific aliases and functions
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+alias ls='ls --color=auto'
