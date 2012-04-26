@@ -1,10 +1,9 @@
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	set guifont=Consolas:h12:b
+else
+	set guifont=Monospace\ Bold\ 10
 endif
-
-"set guifont=Consolas:h12:b
-"set listchars=tab:»\ ,eol:¬,extends:→,precedes:←,trail:·
-"noremap <silent> <esc> :noh<CR>
 
 autocmd BufEnter * silent! lcd %:p:h
 filetype plugin indent on
@@ -26,7 +25,7 @@ set backspace=indent,eol,start
 set encoding=utf-8
 set fileformats=unix,dos,mac
 set grepprg=grep\ -nH\ $*
-set guifont=Monospace\ Bold\ 10
+set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait500-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
 set guioptions=agi
 set hidden
 set hlsearch
