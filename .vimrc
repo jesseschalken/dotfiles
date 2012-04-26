@@ -23,7 +23,7 @@ set autowrite
 set background=dark
 set backspace=indent,eol,start
 set encoding=utf-8
-set fileformats=unix,dos,mac
+set fileformats=unix,dos
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait500-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
 set guioptions=agi
