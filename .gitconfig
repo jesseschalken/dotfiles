@@ -1,0 +1,55 @@
+[user]
+	email = me@jesseschalken.com
+	name = Jesse Schalken
+[core]
+	autocrlf = input
+	editor = vim
+	pager = less -FXRS -x2
+	whitespace = -blank-at-eol,-space-before-tab,-indent-with-non-tab,-tab-in-indent,-blank-at-eof,-trailing-space,-cr-at-eol
+[push]
+	default = tracking
+[alias]
+	br = branch -a
+	ci = commit
+	cia = commit -a
+	ciam = commit -a -m
+	co = checkout
+	df = diff -w
+	ds = diff -w --stat
+	lg = log -p
+	lol = log --graph --decorate --oneline --abbrev-commit
+	lola = log --graph --decorate --oneline --abbrev-commit --all
+	ls = ls-files
+	st = status
+[color]
+	branch = true
+	diff = true
+	interactive = true
+	pager = true
+	status = true
+	ui = true
+[i18n]
+	filesEncoding = utf-8
+[color "branch"]
+	current = blue ul bold
+	local = blue bold
+	remote = green bold
+[color "diff"]
+	frag = blue bold
+	meta = dim
+	new = green bold
+	old = red bold
+	whitespace = red reverse bold
+[color "status"]
+	added = yellow bold
+	branch = blue bold ul
+	changed = green bold
+	header = normal dim
+	nobranch = red bold reverse
+	unmerged = red bold
+	untracked = red bold
+	updated = yellow bold
+[merge]
+	conflictstyle = diff3
+[mergetool]
+	keepBackup = false
