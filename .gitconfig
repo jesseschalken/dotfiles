@@ -4,7 +4,7 @@
 [core]
 	autocrlf = input
 	editor = vim
-	pager = less -FXRS -x2
+	pager = less --quit-if-one-screen --raw-control-chars --chop-long-lines --tabs=2
 	whitespace = -blank-at-eol,-space-before-tab,-indent-with-non-tab,-tab-in-indent,-blank-at-eof,-trailing-space,-cr-at-eol
 [push]
 	default = tracking
@@ -31,7 +31,7 @@
 [i18n]
 	filesEncoding = utf-8
 [color "branch"]
-	current = blue ul bold
+	current = blue reverse bold
 	local = blue bold
 	remote = green bold
 [color "diff"]
@@ -42,7 +42,7 @@
 	whitespace = red reverse bold
 [color "status"]
 	added = yellow bold
-	branch = blue bold ul
+	branch = blue bold reverse
 	changed = green bold
 	header = normal dim
 	nobranch = red bold reverse

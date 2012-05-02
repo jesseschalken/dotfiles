@@ -7,16 +7,12 @@ endif
 
 autocmd BufEnter * silent! lcd %:p:h
 filetype plugin indent on
-filetype plugin on
 let NERDSpaceDelims=1
-noremap $ g$
 noremap , ;
-noremap 0 g0
 noremap ; :
 noremap <C-j> :bprev<CR>
 noremap <C-k> :bnext<CR>
 noremap <space> za
-noremap ^ g^
 noremap j gj
 noremap k gk
 set autochdir
@@ -33,14 +29,6 @@ set foldmethod=expr
 set formatoptions=tcqro
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait500-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
-set guifont=Monospace\ 8
-set guioptions-=L
-set guioptions-=R
-set guioptions-=T
-set guioptions-=b
-set guioptions-=l
-set guioptions-=m
-set guioptions-=r
 set guioptions=agi
 set hidden
 set hlsearch
@@ -59,7 +47,7 @@ set nocul
 set noequalalways
 set noerrorbells
 set noexpandtab
-set nolist
+set list
 set nonumber
 set nospell
 set noswapfile
