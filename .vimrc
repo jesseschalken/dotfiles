@@ -1,8 +1,8 @@
 if has('win32') || has('win64')
-	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-	set guifont=Consolas:h12:b
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+  set guifont=Consolas:h12:b
 else
-	set guifont=Monospace\ Bold\ 10
+  set guifont=Monospace\ Bold\ 10
 endif
 
 autocmd BufEnter * silent! lcd %:p:h
@@ -23,6 +23,7 @@ set background=dark
 set backspace=indent,eol,start
 set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
+set expandtab
 set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldmethod=expr
@@ -36,6 +37,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
+set list
 set listchars=tab:»\ ,eol:¬,extends:→,precedes:←
 set makeprg=php\ -l\ %
 set more
@@ -46,8 +48,6 @@ set nocompatible
 set nocul
 set noequalalways
 set noerrorbells
-set noexpandtab
-set list
 set nonumber
 set nospell
 set noswapfile
@@ -62,6 +62,7 @@ set showmatch
 set showmode
 set showtabline=2
 set smartcase
+set softtabstop=2
 set spelllang=en_au,en
 set tabstop=2
 set ttyfast
