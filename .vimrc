@@ -38,7 +38,7 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set list
-set listchars=tab:»\ ,eol:¬,extends:→,precedes:←
+set listchars=tab:»\ ,trail:·,extends:→,precedes:←
 set makeprg=php\ -l\ %
 set more
 set mouse=a
