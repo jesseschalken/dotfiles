@@ -14,7 +14,7 @@
   co = checkout
   df = diff -w
   ds = diff -w --stat
-  lg = log --decorate --oneline --abbrev-commit
+  lg = log --decorate --oneline --abbrev-commit --full-history
   ls = ls-files
   st = status
 [color]
@@ -41,17 +41,17 @@
   header    = normal dim
   branch    = bold blue reverse
   nobranch  = bold red reverse
-  added     = bold yellow
-  updated   = bold yellow
-  changed   = bold green
+  added     = bold green
+  updated   = bold green
+  changed   = bold yellow
   unmerged  = bold red
   untracked = bold red
 [color "decorate"]
-  branch       = bold green
-  remoteBranch = bold red
-  tag          = bold yellow
-  stash        = bold magenta
-  HEAD         = bold cyan
+  branch       = bold blue
+  remoteBranch = bold magenta
+  tag          = bold green
+  stash        = bold cyan
+  HEAD         = bold blue ul
 [merge]
   conflictstyle = diff3
   renamelimit = 10000

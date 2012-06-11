@@ -15,7 +15,6 @@ noremap <C-k> :bnext<CR>
 noremap <space> za
 noremap j gj
 noremap k gk
-set autochdir
 set autoindent
 set autoread
 set autowrite
