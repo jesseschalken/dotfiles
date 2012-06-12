@@ -1,56 +1,59 @@
 [user]
-	email = jesse@ivt.com.au
-	name = Jesse Schalken
+  email = jesse@ivt.com.au
+  name = Jesse Schalken
 [core]
-	autocrlf = input
-	editor = vim
-	pager = less --quit-if-one-screen --raw-control-chars --chop-long-lines --tabs=2
-	whitespace = -blank-at-eol,-space-before-tab,-indent-with-non-tab,-tab-in-indent,-blank-at-eof,-trailing-space,-cr-at-eol
+  autocrlf = input
+  editor = vim
+  pager = less --quit-if-one-screen --raw-control-chars --chop-long-lines --tabs=2
+  whitespace = -blank-at-eol,-space-before-tab,-indent-with-non-tab,-tab-in-indent,-blank-at-eof,-trailing-space,-cr-at-eol
 [push]
-	default = tracking
+  default = tracking
 [alias]
-	br = branch
-	ci = commit
-	cia = commit -a
-	ciam = commit -a -m
-	co = checkout
-	df = diff -w
-	ds = diff -w --stat --stat-width=120 --stat-name-width=999
-	lg = log -p
-	lol = log --graph --decorate --oneline --abbrev-commit
-	lola = log --graph --decorate --oneline --abbrev-commit --all
-	ls = ls-files
-	st = status
+  br = branch
+  ci = commit
+  co = checkout
+  df = diff -w
+  ds = diff -w --stat --stat-width=120 --stat-name-width=999
+  lg = log --decorate --oneline --abbrev-commit --full-history
+  ls = ls-files
+  st = status
 [color]
-	branch = true
-	diff = true
-	interactive = true
-	pager = true
-	status = true
-	ui = true
+  branch      = true
+  diff        = true
+  interactive = true
+  pager       = true
+  status      = true
+  ui          = true
 [i18n]
-	filesEncoding = utf-8
+  filesEncoding = utf-8
 [color "branch"]
-	current = blue reverse bold
-	local = blue bold
-	remote = green bold
+  current  = bold blue reverse
+  local    = bold blue
+  remote   = bold magenta
+  nobranch = bold red reverse
 [color "diff"]
-	frag = blue bold
-	meta = dim
-	new = green bold
-	old = red bold
-	whitespace = red reverse bold
+  frag       = bold blue
+  meta       = dim
+  new        = bold green
+  old        = bold red
+  whitespace = bold red reverse
 [color "status"]
-	added = yellow bold
-	branch = blue bold reverse
-	changed = green bold
-	header = normal dim
-	nobranch = red bold reverse
-	unmerged = red bold
-	untracked = red bold
-	updated = yellow bold
+  header    = normal dim
+  branch    = bold blue reverse
+  nobranch  = bold red reverse
+  added     = bold green
+  updated   = bold green
+  changed   = bold yellow
+  unmerged  = bold red
+  untracked = bold red
+[color "decorate"]
+  branch       = bold blue
+  remoteBranch = bold magenta
+  tag          = bold green
+  stash        = bold cyan
+  HEAD         = bold blue ul
 [merge]
-	conflictstyle = diff3
-	renameLimit = 50000
+  conflictstyle = diff3
+  renameLimit = 50000
 [mergetool]
-	keepBackup = false
+  keepBackup = false
