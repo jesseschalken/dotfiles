@@ -9,13 +9,13 @@
 [push]
 	default = tracking
 [alias]
-	br = branch -a
+	br = branch
 	ci = commit
 	cia = commit -a
 	ciam = commit -a -m
 	co = checkout
 	df = diff -w
-	ds = diff -w --stat
+	ds = diff -w --stat --stat-width=120 --stat-name-width=999
 	lg = log -p
 	lol = log --graph --decorate --oneline --abbrev-commit
 	lola = log --graph --decorate --oneline --abbrev-commit --all
@@ -51,5 +51,6 @@
 	updated = yellow bold
 [merge]
 	conflictstyle = diff3
+	renameLimit = 50000
 [mergetool]
 	keepBackup = false
