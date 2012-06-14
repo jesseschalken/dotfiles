@@ -25,7 +25,7 @@ set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
 set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
-set foldlevelstart=99
+set foldlevelstart=0
 set foldmethod=syntax
 set formatoptions=tcqro
 set grepprg=grep\ -nH\ $*
