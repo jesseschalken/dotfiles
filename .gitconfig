@@ -59,3 +59,7 @@
   renameLimit = 50000
 [mergetool]
   keepBackup = false
+[log]
+  date = short
+  abbrevCommit = true
+  decorate = short
