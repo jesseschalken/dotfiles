@@ -4,7 +4,7 @@
 [core]
   autocrlf = input
   editor = vim
-  pager = less --quit-if-one-screen --raw-control-chars --chop-long-lines --tabs=2
+  pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2
   whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,blank-at-eof,trailing-space,cr-at-eol
 [push]
   default = upstream
@@ -14,7 +14,8 @@
   co = checkout
   df = diff -w
   ds = diff -w --stat --stat-width=120 --stat-name-width=999
-  lg = log --decorate --oneline --abbrev-commit --full-history
+  dw = diff -w --color-words='[a-zA-Z0-9]+|[^a-zA-Z0-9]'
+  lg = log --decorate --full-history --pretty=format:'%C(yellow bold)%h%Creset%C(bold blue)%d%Creset %C(cyan bold)%ad%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset' --date=short
   ls = ls-files
   st = status
 [color]
@@ -37,6 +38,7 @@
   new        = bold green
   old        = bold red
   whitespace = bold red reverse
+  plain      = normal
 [color "status"]
   header    = normal dim
   branch    = bold blue reverse
@@ -57,3 +59,7 @@
   renameLimit = 50000
 [mergetool]
   keepBackup = false
+[log]
+  date = short
+  abbrevCommit = true
+  decorate = short
