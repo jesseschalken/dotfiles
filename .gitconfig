@@ -14,6 +14,7 @@
   co = checkout
   df = diff -w
   ds = diff -w --stat --stat-width=120 --stat-name-width=999
+  dw = diff -w --color-words='[a-zA-Z0-9]+|[^a-zA-Z0-9]'
   lg = log --decorate --full-history --pretty=format:'%C(yellow bold)%h%Creset%C(bold blue)%d%Creset %C(cyan bold)%ad%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset' --date=short
   ls = ls-files
   st = status
