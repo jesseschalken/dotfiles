@@ -38,6 +38,7 @@
   new        = bold green
   old        = bold red
   whitespace = bold red reverse
+  plain      = normal
 [color "status"]
   header    = normal dim
   branch    = bold blue reverse
