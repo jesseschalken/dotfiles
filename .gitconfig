@@ -65,3 +65,6 @@
   decorate     = short
 [format]
   pretty = format:%C(yellow bold)%h%Creset%C(bold blue)%d%Creset %C(cyan bold)%ad%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset
+[pager]
+  branch = true
+  status = true
