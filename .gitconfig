@@ -13,11 +13,12 @@
   ci = commit
   co = checkout
   df = diff -w
-  ds = diff -w --stat --stat-width=120 --stat-name-width=999
+  ds = diff -w --stat --stat-width=200 --stat-name-width=999
   dw = diff -w --color-words='[a-zA-Z0-9]+|[^a-zA-Z0-9]'
   lg = log --full-history
   ls = ls-files
   st = status
+  rawlog = log --pretty=raw
 [color]
   branch      = true
   diff        = true
@@ -64,7 +65,7 @@
   abbrevCommit = true
   decorate     = short
 [format]
-  pretty = format:%C(yellow bold)%h%Creset%C(bold blue)%d%Creset %C(cyan bold)%ad%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset
+  pretty = format:%C(yellow bold)%h%Creset %C(green bold)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset%C(bold blue)%d%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset
 [pager]
   branch = true
   status = true
