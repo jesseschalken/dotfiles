@@ -1,4 +1,4 @@
-PS1='\[\033[30;47m\]\w\[\033[00m\] \[\033[01;34;44m\]\$\[\033[00m\] '
+PS1='\[\033[30;47m\]\w\[\033[00m\]$(__git_ps1 " $(git config --get-color color.branch.current)%s\[\033[00m\]") \[\033[01;34;44m\]\$\[\033[00m\] '
 
 if [ -f /etc/DIR_COLORS ]; then
 	eval "$(dircolors -b /etc/DIR_COLORS)"
@@ -15,3 +15,9 @@ alias grep='grep --color=auto'
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+#export GIT_PS1_SHOWDIRTYSTATE=1
+#export GIT_PS1_SHOWUNTRACKEDFILES=1
+#export GIT_PS1_SHOWUPSTREAM=verbose
+
+source ~/.git-completion.sh
