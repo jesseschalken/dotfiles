@@ -35,13 +35,13 @@
   nobranch = bold red reverse
 [color "diff"]
   frag       = bold blue
-  meta       = dim
+  meta       = bold black
   new        = bold green
   old        = bold red
   whitespace = bold red reverse
   plain      = normal
 [color "status"]
-  header    = normal dim
+  header    = bold black
   branch    = bold blue reverse
   nobranch  = bold red reverse
   added     = bold green
