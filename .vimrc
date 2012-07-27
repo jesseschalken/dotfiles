@@ -5,7 +5,6 @@ else
   set guifont=Monospace\ Bold\ 10
 endif
 
-autocmd BufEnter * silent! lcd %:p:h
 filetype plugin indent on
 let NERDSpaceDelims=1
 let php_folding=1
@@ -16,6 +15,7 @@ noremap <C-k> :bnext<CR>
 noremap <space> za
 noremap j gj
 noremap k gk
+set autochdir
 set autoindent
 set autoread
 set autowrite
@@ -29,11 +29,10 @@ set foldlevelstart=0
 set foldmethod=syntax
 set formatoptions=tcqro
 set grepprg=grep\ -nH\ $*
-set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait500-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
+set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
 set guioptions=agi
 set hidden
 set hlsearch
-set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
@@ -49,7 +48,9 @@ set nocul
 set noequalalways
 set noerrorbells
 set noexpandtab
+set noignorecase
 set nonumber
+set nosmartcase
 set nospell
 set noswapfile
 set nowrap
@@ -62,7 +63,6 @@ set showcmd
 set showmatch
 set showmode
 set showtabline=2
-set smartcase
 set softtabstop=2
 set spelllang=en_au,en
 set tabstop=2
