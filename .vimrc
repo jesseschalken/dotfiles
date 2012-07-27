@@ -1,8 +1,13 @@
 if has('win32') || has('win64')
   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
   set guifont=Consolas:h12:b
+  set guioptions=agi
+elseif has('mac')
+  set guifont=Menlo\ Bold:h18
+  set guioptions=agie
 else
   set guifont=Monospace\ Bold\ 10
+  set guioptions=agi
 endif
 
 autocmd BufEnter * silent! lcd %:p:h
@@ -31,7 +36,6 @@ set foldmethod=syntax
 set formatoptions=tcqro
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait500-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
-set guioptions=agi
 set hidden
 set hlsearch
 set ignorecase
