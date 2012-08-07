@@ -11,7 +11,7 @@ else
 endif
 
 autocmd BufEnter * silent! lcd %:p:h
-autocmd BufLeave,FocusLost * silent! wall
+autocmd BufLeave,FocusLost,CursorHold * silent! update
 
 filetype plugin indent on
 let NERDSpaceDelims=1
@@ -74,6 +74,7 @@ set softtabstop=2
 set spelllang=en_au,en
 set tabstop=2
 set ttyfast
+set updatetime=1
 set wildmenu
 set winminheight=0
 set winminwidth=0
