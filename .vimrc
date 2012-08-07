@@ -10,6 +10,8 @@ else
   set guioptions=agi
 endif
 
+autocmd BufEnter * silent! lcd %:p:h
+
 filetype plugin indent on
 let NERDSpaceDelims=1
 let php_folding=1
@@ -20,7 +22,6 @@ noremap <C-k> :bnext<CR>
 noremap <space> za
 noremap j gj
 noremap k gk
-set autochdir
 set autoindent
 set autoread
 set autowrite
@@ -47,6 +48,7 @@ set more
 set mouse=a
 set mousefocus
 set mousemodel=extend
+set noautochdir
 set nocompatible
 set nocul
 set noequalalways
