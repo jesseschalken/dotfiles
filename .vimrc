@@ -11,6 +11,7 @@ else
 endif
 
 autocmd BufEnter * silent! lcd %:p:h
+autocmd BufLeave,FocusLost * silent! wall
 
 filetype plugin indent on
 let NERDSpaceDelims=1
