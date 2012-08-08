@@ -16,7 +16,7 @@ autocmd BufLeave,FocusLost,CursorHold * silent! update
 filetype plugin indent on
 let NERDSpaceDelims=1
 let php_folding=1
-noremap <Esc><Esc> :nohlsearch<CR>
+noremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap , ;
 noremap ; :
 noremap <C-j> :bprev<CR>
