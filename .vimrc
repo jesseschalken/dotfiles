@@ -11,7 +11,7 @@ else
 endif
 
 autocmd BufEnter * silent! lcd %:p:h
-autocmd BufLeave,FocusLost,CursorHold * silent! update
+autocmd CursorHold * silent! update
 
 filetype plugin indent on
 let NERDSpaceDelims=1
