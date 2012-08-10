@@ -74,6 +74,7 @@ set showtabline=2
 set softtabstop=2
 set spelllang=en_au,en
 set tabstop=2
+set tags=./tags;/
 set ttyfast
 set updatetime=1
 set wildmenu
