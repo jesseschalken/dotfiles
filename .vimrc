@@ -16,13 +16,13 @@ autocmd CursorHold * silent! update
 filetype plugin indent on
 let NERDSpaceDelims=1
 let php_folding=1
-noremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap , ;
 noremap ; :
 noremap <C-ScrollWheelDown> :tn<CR>
 noremap <C-ScrollWheelUp> :tp<CR>
 noremap <C-j> :bprev<CR>
 noremap <C-k> :bnext<CR>
+noremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap <space> za
 noremap j gj
 noremap k gk
