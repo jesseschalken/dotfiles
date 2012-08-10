@@ -19,6 +19,8 @@ let php_folding=1
 noremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap , ;
 noremap ; :
+noremap <C-ScrollWheelDown> :tn<CR>
+noremap <C-ScrollWheelUp> :tp<CR>
 noremap <C-j> :bprev<CR>
 noremap <C-k> :bnext<CR>
 noremap <space> za
