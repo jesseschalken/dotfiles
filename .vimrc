@@ -33,6 +33,7 @@ set background=dark
 set backspace=indent,eol,start
 set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
+set expandtab
 set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=0
@@ -57,7 +58,6 @@ set nocompatible
 set nocul
 set noequalalways
 set noerrorbells
-set noexpandtab
 set noignorecase
 set nonumber
 set nosmartcase
