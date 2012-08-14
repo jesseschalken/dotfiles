@@ -14,7 +14,7 @@
   co = checkout
   df = diff -w
   ds = diff -w --stat --stat-width=200 --stat-name-width=999
-  dw = diff -w --color-words='[a-zA-Z0-9]+|[^a-zA-Z0-9]'
+  dw = diff -w --color-words
   lg = log --full-history
   ls = ls-files
   st = status
@@ -69,3 +69,5 @@
 [pager]
   branch = true
   status = true
+[diff]
+  wordRegex = [A-Z_a-z0-9][a-z0-9]+|.
