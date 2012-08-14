@@ -61,7 +61,6 @@ set noerrorbells
 set noignorecase
 set nonumber
 set nosmartcase
-set nospell
 set noswapfile
 set nowrap
 set nowrapscan
@@ -74,6 +73,7 @@ set showmatch
 set showmode
 set showtabline=2
 set softtabstop=2
+set spell
 set spelllang=en_au,en
 set tabstop=2
 set tags=./tags;/
