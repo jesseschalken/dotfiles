@@ -10,11 +10,21 @@ else
   set guioptions=agi
 endif
 
+if has('gui_running')
+  colorscheme solarized
+  set background=light
+else
+  colorscheme default
+  set background=dark
+endif
+
 autocmd BufEnter * silent! lcd %:p:h
 autocmd CursorHold * silent! update
 
 filetype plugin indent on
 let NERDSpaceDelims=1
+let g:solarized_contrast="high"
+let g:solarized_visibility="low"
 let php_folding=1
 noremap , ;
 noremap ; :
@@ -29,7 +39,6 @@ noremap k gk
 set autoindent
 set autoread
 set autowrite
-set background=dark
 set backspace=indent,eol,start
 set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
