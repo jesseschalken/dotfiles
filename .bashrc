@@ -1,10 +1,6 @@
 PS1='\[\033[30;47m\]\w\[\033[00m\]$(__git_ps1 " $(git config --get-color color.branch.current)%s\[\033[00m\]") \[\033[01;34;44m\]\$\[\033[00m\] '
 
-if [ -f /etc/DIR_COLORS ]; then
-	eval "$(dircolors -b /etc/DIR_COLORS)"
-else
-	eval "$(dircolors -b)"
-fi
+eval "$(dircolors -b)"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
