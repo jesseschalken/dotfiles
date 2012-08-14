@@ -13,8 +13,8 @@
   ci = commit
   co = checkout
   df = diff -w
-  ds = diff -w --stat --stat-width=200 --stat-name-width=999
-  dw = diff -w --color-words
+  ds = diff --stat
+  dw = diff --color-words
   lg = log --full-history
   ls = ls-files
   st = status
