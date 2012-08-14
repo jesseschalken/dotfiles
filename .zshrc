@@ -1,6 +1,8 @@
 autoload -U colors
 colors
 
+export PATH=~/homebrew/bin:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export EDITOR=vim
 
 eval "$(dircolors -b)"
