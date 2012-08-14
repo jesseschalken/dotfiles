@@ -10,7 +10,7 @@
   default = upstream
 [alias]
   br = branch -vv
-  ci = commit
+  ci = commit -v
   co = checkout
   df = diff -w
   ds = diff --stat
