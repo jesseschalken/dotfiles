@@ -35,13 +35,13 @@
   nobranch = bold red reverse
 [color "diff"]
   frag       = bold blue
-  meta       = bold black
-  new        = bold green
-  old        = bold red
+  meta       = dim normal
+  new        = bold green reverse
+  old        = bold red reverse
   whitespace = bold red reverse
   plain      = normal
 [color "status"]
-  header    = bold black
+  header    = dim normal
   branch    = bold blue reverse
   nobranch  = bold red reverse
   added     = bold green
@@ -54,7 +54,7 @@
   remoteBranch = bold magenta
   tag          = bold green
   stash        = bold cyan
-  HEAD         = bold blue ul
+  HEAD         = bold blue reverse
 [merge]
   conflictstyle = diff3
   renameLimit = 50000
