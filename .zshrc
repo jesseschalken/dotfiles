@@ -23,6 +23,7 @@ compinit
 autoload -U colors
 colors
 
+export MANPATH=~/homebrew/share/man:$PATH
 export PATH=~/homebrew/bin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export EDITOR=vim
