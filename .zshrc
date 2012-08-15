@@ -35,6 +35,7 @@ bindkey -v
 bindkey '^[[Z' reverse-menu-complete
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
+bindkey -M vicmd '^[' vi-cmd-mode
 
 # The following lines were added by compinstall
 
