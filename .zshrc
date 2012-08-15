@@ -54,6 +54,8 @@ bindkey "^[OF" end-of-line
 
 source ~/.git-completion.sh
 
+KEYTIMEOUT=1
+
 PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%}\$(__git_ps1 \" %%{$(git config --get-color color.branch.current)%%}%s%%{\033[00m%%}\") %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
 
 MODE_INDICATOR="%{$bold_color%}NORMAL%{$reset_color%} "
