@@ -48,4 +48,4 @@ compinit
 
 source ~/.git-completion.sh
 PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%}\$(__git_ps1 \" %%{$(git config --get-color color.branch.current)%%}%s%%{\033[00m%%}\") %{$bold_color$fg[blue]$bg[blue]%}%#%{$reset_color%} "
-LISTPROMPT=
+RPROMPT="%{$bold_color$fg[grey]%}%n@%M%{$reset_color%}"
