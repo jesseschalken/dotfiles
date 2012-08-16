@@ -5,16 +5,16 @@
   autocrlf = input
   editor = vim
   pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2
-  whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,blank-at-eof,trailing-space,cr-at-eol
+  whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 [push]
   default = upstream
 [alias]
-  br = branch -vv
-  ci = commit
+  br = branch
+  ci = commit -v
   co = checkout
   df = diff -w
-  ds = diff -w --stat --stat-width=200 --stat-name-width=999
-  dw = diff -w --color-words
+  ds = diff --stat
+  dw = diff --color-words
   lg = log --full-history
   ls = ls-files
   st = status
@@ -34,14 +34,15 @@
   remote   = bold magenta
   nobranch = bold red reverse
 [color "diff"]
-  frag       = bold blue
-  meta       = bold black
-  new        = bold green
-  old        = bold red
+  frag       = bold blue reverse
+  meta       = dim normal
+  new        = bold green normal
+  func       = bold white reverse
+  old        = bold red normal
   whitespace = bold red reverse
   plain      = normal
 [color "status"]
-  header    = bold black
+  header    = dim normal
   branch    = bold blue reverse
   nobranch  = bold red reverse
   added     = bold green
@@ -54,7 +55,7 @@
   remoteBranch = bold magenta
   tag          = bold green
   stash        = bold cyan
-  HEAD         = bold blue ul
+  HEAD         = bold blue reverse
 [merge]
   conflictstyle = diff3
   renameLimit = 50000
