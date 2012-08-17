@@ -5,11 +5,11 @@
   autocrlf = input
   editor = vim
   pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2
-  whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,blank-at-eof,trailing-space,cr-at-eol
+  whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 [push]
   default = upstream
 [alias]
-  br = branch -vv
+  br = branch
   ci = commit -v
   co = checkout
   df = diff -w
@@ -34,10 +34,11 @@
   remote   = bold magenta
   nobranch = bold red reverse
 [color "diff"]
-  frag       = bold blue
+  frag       = bold blue reverse
   meta       = dim normal
-  new        = bold green reverse
-  old        = bold red reverse
+  new        = bold green normal
+  func       = bold white reverse
+  old        = bold red normal
   whitespace = bold red reverse
   plain      = normal
 [color "status"]

@@ -3,6 +3,7 @@ export PATH=~/homebrew/bin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
+# export LESS='--quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2'
 
 ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
@@ -10,7 +11,8 @@ plugins=(git vi-mode brew node)
 source $ZSH/oh-my-zsh.sh
 
 KEYTIMEOUT=1
-PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%}\$(__git_ps1 \" %%{$(git config --get-color color.branch.current)%%}%s%%{\033[00m%%}\") %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
+# PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%}\$(__git_ps1 \" %%{$(git config --get-color color.branch.current)%%}%s%%{\033[00m%%}\") %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
+PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
 MODE_INDICATOR="%{$bold_color%}NORMAL%{$reset_color%} "
 RPROMPT="\$(vi_mode_prompt_info)%{"$'\e'"[$color[faint]m%}%n@%M%{$reset_color%}"
 
@@ -46,7 +48,7 @@ zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' max-errors 2
+zstyle ':completion:*' max-errors 0
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
