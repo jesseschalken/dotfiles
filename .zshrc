@@ -32,6 +32,8 @@ setopt pushdignoredups
 setopt pushdsilent
 setopt badpattern
 setopt incappendhistory
+setopt nocorrect
+setopt nocorrectall
 
 bindkey -v
 bindkey '^[[Z' reverse-menu-complete
