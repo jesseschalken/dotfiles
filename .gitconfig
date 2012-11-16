@@ -4,7 +4,7 @@
 [core]
   autocrlf = input
   editor = vim
-  pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2
+  pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=4
   whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 [push]
   default = upstream
