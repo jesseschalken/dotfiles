@@ -3,7 +3,7 @@ if has('win32') || has('win64')
   set guifont=Consolas:h12:b
   set guioptions=agi
 elseif has('mac')
-  set guifont=Menlo\ Bold:h18
+  set guifont=Menlo\ Bold:h14
   set guioptions=agie
 else
   set guifont=Monospace\ Bold\ 10
@@ -88,6 +88,7 @@ set tabstop=2
 set tags=./tags;/
 set ttyfast
 set updatetime=1
+set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0

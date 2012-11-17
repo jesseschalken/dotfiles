@@ -5,6 +5,9 @@ export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 # export LESS='--quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2'
 
+autoload -U colors
+colors
+
 ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 plugins=(git vi-mode brew node)
@@ -16,10 +19,7 @@ PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[blue]$bg[blue
 MODE_INDICATOR="%{$bold_color%}NORMAL%{$reset_color%} "
 RPROMPT="\$(vi_mode_prompt_info)%{"$'\e'"[$color[faint]m%}%n@%M%{$reset_color%}"
 
-eval "$(dircolors -b)"
-
-autoload -U colors
-colors
+# eval "$(dircolors -b)"
 
 alias ls='ls --color=auto'
 
