@@ -1,21 +1,21 @@
 if has('win32') || has('win64')
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-  set guifont=Consolas:h12:b
-  set guioptions=agi
+	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	set guifont=Consolas:h12:b
+	set guioptions=agi
 elseif has('mac')
-  set guifont=Menlo\ Bold:h18
-  set guioptions=agie
+	set guifont=Menlo\ Bold:h18
+	set guioptions=agie
 else
-  set guifont=Monospace\ Bold\ 10
-  set guioptions=agi
+	set guifont=Monospace\ Bold\ 10
+	set guioptions=agi
 endif
 
 if has('gui_running')
-  colorscheme solarized
-  set background=light
+	colorscheme solarized
+	set background=light
 else
-  colorscheme default
-  set background=dark
+	colorscheme default
+	set background=dark
 endif
 
 autocmd BufEnter * silent! lcd %:p:h
@@ -77,17 +77,18 @@ set nowrapscan
 set number
 set ruler
 set shell=bash
-set shiftwidth=2
+set shiftwidth=4
 set showcmd
 set showmatch
 set showmode
 set showtabline=2
-set softtabstop=2
+set softtabstop=4
 set spelllang=en_au,en
-set tabstop=2
+set tabstop=4
 set tags=./tags;/
 set ttyfast
 set updatetime=1
+set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
