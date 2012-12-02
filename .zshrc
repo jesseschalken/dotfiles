@@ -17,18 +17,18 @@ alias ls='ls --color=auto'
 setopt appendhistory
 setopt autocd
 setopt autopushd
+setopt badpattern
 setopt beep
+setopt completealiases
+setopt incappendhistory
 setopt menucomplete
+setopt nocorrect
+setopt nocorrectall
 setopt nomatch
 setopt notify
 setopt promptsubst
 setopt pushdignoredups
 setopt pushdsilent
-setopt badpattern
-setopt incappendhistory
-setopt nocorrect
-setopt nocorrectall
-setopt completealiases
 
 bindkey -v
 bindkey '^[[Z' reverse-menu-complete
