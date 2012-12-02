@@ -34,6 +34,7 @@ setopt badpattern
 setopt incappendhistory
 setopt nocorrect
 setopt nocorrectall
+setopt nosharehistory
 
 bindkey -v
 bindkey '^[[Z' reverse-menu-complete

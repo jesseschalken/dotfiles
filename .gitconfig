@@ -7,7 +7,7 @@
   pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=2
   whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 [push]
-  default = upstream
+	default = simple
 [alias]
   br = branch
   ci = commit -v
@@ -71,4 +71,4 @@
   branch = true
   status = true
 [diff]
-  wordRegex = [_A-Za-z0-9][a-z0-9]+|.
+	wordRegex = \\w+|.
