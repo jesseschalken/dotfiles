@@ -1,74 +1,71 @@
 [user]
-  email = me@jesseschalken.com
-  name = Jesse Schalken
+	email = me@jesseschalken.com
+	name = Jesse Schalken
 [core]
-  autocrlf = input
-  editor = vim
-  pager = less --quit-if-one-screen --RAW-CONTROL-CHARS --chop-long-lines --tabs=4
-  whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
+	whitespace = blank-at-eol,space-before-tab,indent-with-non-tab,trailing-space,cr-at-eol
 [push]
-  default = upstream
+	default = upstream
 [alias]
-  br = branch
-  ci = commit -v
-  co = checkout
-  df = diff -w
-  ds = diff --stat
-  dw = diff --color-words
-  lg = log --full-history
-  ls = ls-files
-  st = status
-  rawlog = log --pretty=raw
+	br = branch
+	ci = commit -v
+	co = checkout
+	df = diff -w
+	ds = diff --stat
+	dw = diff --color-words
+	lg = log --full-history
+	ls = ls-files
+	st = status
+	rawlog = log --pretty=raw
 [color]
-  branch      = true
-  diff        = true
-  interactive = true
-  pager       = true
-  status      = true
-  ui          = true
+	branch      = true
+	diff        = true
+	interactive = true
+	pager       = true
+	status      = true
+	ui          = true
 [i18n]
-  filesEncoding = utf-8
+	filesEncoding = utf-8
 [color "branch"]
-  current  = bold blue reverse
-  local    = bold blue
-  remote   = bold magenta
-  nobranch = bold red reverse
+	current  = bold blue reverse
+	local    = bold blue
+	remote   = bold magenta
+	nobranch = bold red reverse
 [color "diff"]
-  frag       = bold blue reverse
-  meta       = dim normal
-  new        = bold green normal
-  func       = bold white reverse
-  old        = bold red normal
-  whitespace = bold red reverse
-  plain      = normal
+	frag       = bold blue reverse
+	meta       = dim normal
+	new        = bold green normal
+	func       = bold white reverse
+	old        = bold red normal
+	whitespace = bold red reverse
+	plain      = normal
 [color "status"]
-  header    = dim normal
-  branch    = bold blue reverse
-  nobranch  = bold red reverse
-  added     = bold green
-  updated   = bold green
-  changed   = bold yellow
-  unmerged  = bold red
-  untracked = bold red
+	header    = dim normal
+	branch    = bold blue reverse
+	nobranch  = bold red reverse
+	added     = bold green
+	updated   = bold green
+	changed   = bold yellow
+	unmerged  = bold red
+	untracked = bold red
 [color "decorate"]
-  branch       = bold blue
-  remoteBranch = bold magenta
-  tag          = bold green
-  stash        = bold cyan
-  HEAD         = bold blue reverse
+	branch       = bold blue
+	remoteBranch = bold magenta
+	tag          = bold green
+	stash        = bold cyan
+	HEAD         = bold blue reverse
 [merge]
-  conflictstyle = diff3
-  renameLimit = 50000
+	conflictstyle = diff3
+	renameLimit = 50000
 [mergetool]
-  keepBackup = false
+	keepBackup = false
 [log]
-  date         = short
-  abbrevCommit = true
-  decorate     = short
+	date         = short
+	abbrevCommit = true
+	decorate     = short
 [format]
-  pretty = format:%C(yellow bold)%h%Creset %C(green bold)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset%C(bold blue)%d%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset
+	pretty = format:%C(yellow bold)%h%Creset %C(green bold)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset%C(bold blue)%d%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset
 [pager]
-  branch = true
-  status = true
+	branch = true
+	status = true
 [diff]
-  wordRegex = [_A-Za-z0-9][a-z0-9]+|.
+	wordRegex = [_A-Za-z0-9][a-z0-9]+|.
