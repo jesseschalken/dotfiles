@@ -29,6 +29,7 @@ setopt notify
 setopt promptsubst
 setopt pushdignoredups
 setopt pushdsilent
+setopt nosharehistory
 
 bindkey -v
 bindkey '^[[Z' reverse-menu-complete
