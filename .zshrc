@@ -25,15 +25,11 @@ setopt menucomplete
 setopt nocorrect
 setopt nocorrectall
 setopt nomatch
+setopt nosharehistory
 setopt notify
 setopt promptsubst
 setopt pushdignoredups
 setopt pushdsilent
-setopt badpattern
-setopt incappendhistory
-setopt nocorrect
-setopt nocorrectall
-setopt nosharehistory
 
 bindkey -v
 bindkey '^[[Z' reverse-menu-complete
