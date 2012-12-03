@@ -17,7 +17,7 @@ then
 	fi
 fi
 
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH:."
 export MANPATH="$HOME/.local/man:$MANPATH"
 
 eval "$(dircolors -b)"
