@@ -1,8 +1,9 @@
 
 ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
-plugins=(git vi-mode brew node)
-source $ZSH/oh-my-zsh.sh
+plugins=(git vi-mode brew node git-flow github)
+. $ZSH/oh-my-zsh.sh
+. ~/.zprofile
 
 KEYTIMEOUT=1
 PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
