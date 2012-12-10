@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [alias]
-	br = branch
+	br = branch -vv
 	ci = commit -v
 	co = checkout
 	df = diff -w
@@ -14,7 +14,7 @@
 	dw = diff --color-words
 	lg = log --full-history
 	ls = ls-files
-	st = status
+	st = status -s
 	rawlog = log --pretty=raw
 [color]
 	branch      = true
