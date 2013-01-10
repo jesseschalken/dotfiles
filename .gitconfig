@@ -16,6 +16,7 @@
 	ls = ls-files
 	st = status
 	rawlog = log --pretty=raw
+	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
 [color]
 	branch      = true
 	diff        = true
@@ -69,3 +70,5 @@
 	status = true
 [diff]
 	wordRegex = \\w+|.
+[gui]
+	diffcontext = 10
