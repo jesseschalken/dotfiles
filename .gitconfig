@@ -70,5 +70,6 @@
 	status = true
 [diff]
 	wordRegex = [a-zA-Z0-9_]+|.
+	renames = copies
 [gui]
 	diffcontext = 10
