@@ -1,13 +1,13 @@
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
-export LESS='FRSXx4'
+export LESS='FRSXx8'
 export SHELL=zsh
 export PAGER=less
 
 if [ -d "$HOME/homebrew/" ]
 then
-	export PATH="$HOME/homebrew/bin:$PATH"
+	export PATH="$HOME/homebrew/bin:$HOME/homebrew/sbin:$PATH"
 	export MANPATH="$HOME/homebrew/share/man:$MANPATH"
 
 	if brew --prefix coreutils > /dev/null 2>&1
