@@ -64,7 +64,7 @@
 	abbrevCommit = true
 	decorate     = short
 [format]
-	pretty = format:%C(yellow bold)%h%Creset %C(green bold)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset%C(bold blue)%d%Creset %C(magenta bold)%an%Creset %C(bold)%s%Creset
+	pretty = format:%C(yellow bold)%h%Creset %C(dim)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset %C(magenta bold)%an%Creset %C(normal)%s%Creset%C(bold blue)%d%Creset
 [pager]
 	branch = true
 	status = true
