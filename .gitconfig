@@ -73,3 +73,5 @@
 	renames = copies
 [gui]
 	diffcontext = 10
+[gc]
+	pruneexpire = now
