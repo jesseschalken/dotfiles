@@ -54,6 +54,7 @@ set hlsearch
 set incsearch
 set laststatus=2
 set lazyredraw
+set linebreak
 set list
 set listchars=tab:»\ ,trail:·,extends:→,precedes:←
 set makeprg=php\ -l\ %
@@ -72,7 +73,6 @@ set nonumber
 set nosmartcase
 set nospell
 set noswapfile
-set nowrap
 set nowrapscan
 set number
 set ruler
@@ -92,4 +92,5 @@ set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
+set wrap
 syntax on

@@ -11,7 +11,7 @@
 	co = checkout
 	df = diff -w
 	ds = diff --stat
-	dw = diff --color-words
+	dw = diff -w --color-words
 	lg = log --full-history
 	ls = ls-files
 	st = status
@@ -69,7 +69,7 @@
 	branch = true
 	status = true
 [diff]
-	wordRegex = [a-zA-Z0-9_]+|.
+	wordRegex = [$:a-zA-Z0-9]+|\\S
 	renames = copies
 [gui]
 	diffcontext = 10
