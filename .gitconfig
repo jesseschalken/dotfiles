@@ -30,6 +30,7 @@
 	current  = bold blue reverse
 	local    = bold blue
 	remote   = bold magenta
+	upstream = bold magenta
 	nobranch = bold red reverse
 [color "diff"]
 	frag       = bold blue reverse
