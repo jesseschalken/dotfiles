@@ -18,9 +18,6 @@ else
 	set background=dark
 endif
 
-autocmd BufEnter * silent! lcd %:p:h
-autocmd CursorHold * silent! update
-
 filetype plugin indent on
 let NERDSpaceDelims=1
 let g:solarized_contrast="high"
