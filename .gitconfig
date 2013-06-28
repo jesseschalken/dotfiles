@@ -76,3 +76,5 @@
 	diffcontext = 10
 [gc]
 	pruneexpire = now
+[credential]
+	helper = cache --timeout=86400
