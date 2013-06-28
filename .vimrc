@@ -52,7 +52,6 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak
-set list
 set listchars=tab:»\ ,trail:·,extends:→,precedes:←
 set makeprg=php\ -l\ %
 set more
@@ -66,6 +65,7 @@ set noequalalways
 set noerrorbells
 set noexpandtab
 set noignorecase
+set nolist
 set nonumber
 set nosmartcase
 set nospell
