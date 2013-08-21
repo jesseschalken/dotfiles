@@ -1,0 +1,4 @@
+#!/bin/sh
+
+du -ax --si "$1" | sort -rh | less
+
