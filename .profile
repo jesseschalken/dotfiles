@@ -1,7 +1,7 @@
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
-export LESS='FRSXx8'
+export LESS=~RS
 export SHELL=zsh
 export PAGER=less
 

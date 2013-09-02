@@ -6,7 +6,7 @@
 [push]
 	default = tracking
 [alias]
-	br = branch -v
+	br = branch -vv
 	ci = commit -v
 	co = checkout
 	df = diff -w
@@ -68,7 +68,6 @@
 	pretty = format:%C(yellow bold)%h%Creset %C(dim)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset %C(magenta bold)%an%Creset %C(normal)%s%Creset%C(bold blue)%d%Creset
 [pager]
 	branch = true
-	status = true
 [diff]
 	wordRegex = [$:a-zA-Z0-9_]+|\\S
 	renames = copies
