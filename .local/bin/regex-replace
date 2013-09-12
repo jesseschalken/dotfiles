@@ -1,0 +1,82 @@
+#!/usr/bin/env php
+<?php
+
+class RegexReplace
+{
+    static function run($argv)
+    {
+        error_reporting(-1);
+
+        ini_set('display_errors', '1');
+        ini_set('html_errors', '0');
+        ini_set('pcre.backtrack_limit', "90000000");
+        ini_set('pcre.recursion_limit', "90000000");
+
+        $programName = array_shift($argv);
+        $regex = array_shift($argv);
+        $replace = array_shift($argv);
+
+        if (!isset($regex) or !isset($replace)) {
+            self::error("Usage: $programName <perl_regex> <perl_regex_replace> [<file>...]");
+        }
+
+        self::doReplace($regex, $replace, $argv);
+    }
+
+    private static function doReplace($regex, $replace, array $files)
+    {
+        $numFiles = count($files);
+        $numReplacements = 0;
+
+        foreach ($files as $k => $file) {
+            $i = $k + 1;
+            print "\r\x1B[2K$i/$numFiles: $file";
+            file_put_contents($file, self::pregReplace($regex, $replace, file_get_contents($file), $numReplacements));
+            print "\r\x1B[2K$i/$numFiles";
+        }
+
+        print "\n";
+        print "$numReplacements replacements\n";
+    }
+
+    private static function pregReplace($regex, $replace, $contents, &$counter = 0)
+    {
+        // Insert a "\" before each "#" preceded by an even number of "\"s
+        $pcreRegex = "#" . preg_replace('#(?<!\\\\)((\\\\\\\\)*)(\#)#S', '$1\\\\$3', $regex) . "#sS";
+        $result = preg_replace($pcreRegex, $replace, $contents, -1, $count);
+        $counter += $count;
+
+        self::check_preg_last_error();
+
+        return $result;
+    }
+
+    private static function check_preg_last_error()
+    {
+        $error = preg_last_error();
+
+        if ($error === PREG_NO_ERROR) {
+            return;
+        }
+
+        $pregErrors = array(
+            PREG_NO_ERROR => 'PREG_NO_ERROR',
+            PREG_INTERNAL_ERROR => 'PREG_INTERNAL_ERROR',
+            PREG_BACKTRACK_LIMIT_ERROR => 'PREG_BACKTRACK_LIMIT_ERROR',
+            PREG_BAD_UTF8_ERROR => 'PREG_BAD_UTF8_ERROR',
+            PREG_BAD_UTF8_OFFSET_ERROR => 'PREG_BAD_UTF8_OFFSET_ERROR',
+        );
+
+        self::error("error: $error {$pregErrors[$error]}");
+    }
+
+    private static function error($message)
+    {
+        fwrite(STDERR, "$message\n");
+
+        exit(1);
+    }
+}
+
+RegexReplace::run($argv);
+

@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php 
+
+function scanAndPrint( $dir )
+{
+	$total = 1;
+
+	if ( is_dir( $dir ) && !is_link( $dir ) )
+	{
+		foreach ( scandir( $dir ) as $file )
+			if ( $file !== '.' && $file !== '..' )
+				$total += scanAndPrint( "$dir/$file" );
+
+		print "$total\t$dir\n";
+	}
+
+	return $total;
+}
+
+foreach ( array_slice( $argv, 1 ) as $dir )
+	scanAndPrint( $dir );
+
