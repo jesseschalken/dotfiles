@@ -1,22 +1,33 @@
 #!/usr/bin/env php
 <?php 
 
-function scanAndPrint( $dir )
+class TreeSize
 {
-	$total = 1;
-
-	if ( is_dir( $dir ) && !is_link( $dir ) )
+	static function run( array $args )
 	{
-		foreach ( scandir( $dir ) as $file )
-			if ( $file !== '.' && $file !== '..' )
-				$total += scanAndPrint( "$dir/$file" );
+		array_shift( $args );
 
-		print "$total\t$dir\n";
+		foreach ( $args as $arg )
+			self::scan( $arg );
 	}
 
-	return $total;
+	static function scan( $dir )
+	{
+		$total = 1;
+
+		if ( is_dir( $dir ) && !is_link( $dir ) )
+		{
+			foreach ( scandir( $dir ) as $file )
+				if ( $file !== '.' && $file !== '..' )
+					$total += self::scan( "$dir/$file" );
+
+			print "$total\t$dir\n";
+		}
+
+		return $total;
+	}
 }
 
-foreach ( array_slice( $argv, 1 ) as $dir )
-	scanAndPrint( $dir );
+TreeSize::run( $argv );
+
 
