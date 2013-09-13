@@ -13,6 +13,8 @@ endif
 if has('gui_running')
 	colorscheme solarized
 	set background=light
+	set lines=60
+	set columns=120
 else
 	colorscheme default
 	set background=dark
