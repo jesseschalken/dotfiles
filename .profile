@@ -11,7 +11,7 @@ then
 	export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 fi
 
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH:."
+export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/man:$MANPATH"
 
 eval "$(dircolors -b)"
