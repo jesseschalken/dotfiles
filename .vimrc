@@ -43,6 +43,7 @@ Bundle 'noahfrederick/vim-hemisu'
 Bundle 'indenthtml.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'molokai'
 
 filetype plugin indent on
 
