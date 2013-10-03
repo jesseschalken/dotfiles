@@ -41,6 +41,7 @@ Bundle 'Wombat'
 Bundle 'wesgibbs/vim-irblack'
 Bundle 'noahfrederick/vim-hemisu'
 Bundle 'indenthtml.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
 
 filetype plugin indent on
