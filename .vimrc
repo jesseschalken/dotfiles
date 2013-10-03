@@ -11,6 +11,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
 Bundle 'bufexplorer.zip'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'matchit.zip'
 
 filetype plugin indent on
 
