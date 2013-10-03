@@ -1,13 +1,13 @@
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 	set guifont=Consolas:h12:b
-	set guioptions=agi
+	set guioptions=gi
 elseif has('mac')
 	set guifont=Menlo\ Bold:h12
-	set guioptions=agie
+	set guioptions=gie
 else
 	set guifont=Monospace\ Bold\ 10
-	set guioptions=agi
+	set guioptions=gi
 endif
 
 if has('gui_running')
@@ -45,7 +45,7 @@ set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=0
 set foldmethod=syntax
-set formatoptions=tcqro
+set formatoptions=tcqroa
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
 set hidden
@@ -92,4 +92,5 @@ set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
+set textwidth=78
 syntax on
