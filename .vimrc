@@ -8,6 +8,7 @@ call vundle#rc()
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Align'
 
 filetype plugin indent on
 
