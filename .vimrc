@@ -1,3 +1,6 @@
+
+execute pathogen#infect()
+
 if has('win32') || has('win64')
 	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 	set guifont=Consolas:h12:b
@@ -94,3 +97,4 @@ set winminwidth=0
 set wrap
 set textwidth=78
 syntax on
+
