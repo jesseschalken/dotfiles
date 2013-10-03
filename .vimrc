@@ -1,4 +1,16 @@
 
+if has('win32') || has('win64')
+	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+	set guifont=Consolas:h12:b
+	set guioptions=gi
+elseif has('mac')
+	set guifont=Menlo\ Bold:h12
+	set guioptions=gie
+else
+	set guifont=Monospace\ Bold\ 10
+	set guioptions=gi
+endif
+
 set nocompatible
 filetype off
 
@@ -29,20 +41,9 @@ Bundle 'Wombat'
 Bundle 'wesgibbs/vim-irblack'
 Bundle 'noahfrederick/vim-hemisu'
 Bundle 'indenthtml.vim'
+Bundle 'tomtom/tcomment_vim'
 
 filetype plugin indent on
-
-if has('win32') || has('win64')
-	set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-	set guifont=Consolas:h12:b
-	set guioptions=gi
-elseif has('mac')
-	set guifont=Menlo\ Bold:h12
-	set guioptions=gie
-else
-	set guifont=Monospace\ Bold\ 10
-	set guioptions=gi
-endif
 
 if has('gui_running')
 	colorscheme solarized
