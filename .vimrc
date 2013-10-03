@@ -4,7 +4,7 @@ if has('win32') || has('win64')
 	set guifont=Consolas:h12:b
 	set guioptions=gi
 elseif has('mac')
-	set guifont=Menlo\ Bold:h12
+	set guifont=Menlo\ Bold:h14
 	set guioptions=gie
 else
 	set guifont=Monospace\ Bold\ 10
@@ -46,8 +46,8 @@ Bundle 'tomtom/tcomment_vim'
 filetype plugin indent on
 
 if has('gui_running')
-	colorscheme solarized
-	set background=light
+	colorscheme hemisu
+	set background=dark
 	set lines=60
 	set columns=120
 else
