@@ -69,7 +69,7 @@
 [pager]
 	branch = true
 [diff]
-	wordRegex = [$:a-zA-Z0-9_]+|\\S
+	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
 	renames = copies
 [gui]
 	diffcontext = 10
