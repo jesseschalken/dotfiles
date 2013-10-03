@@ -10,6 +10,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
 Bundle 'bufexplorer.zip'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 
