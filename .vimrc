@@ -4,10 +4,10 @@ if has('win32') || has('win64')
 	set guifont=Consolas:h12:b
 	set guioptions=gi
 elseif has('mac')
-	set guifont=Menlo\ Bold:h14
+	set guifont=Menlo:h14
 	set guioptions=gie
 else
-	set guifont=Monospace\ Bold\ 10
+	set guifont=Monospace\ 10
 	set guioptions=gi
 endif
 
