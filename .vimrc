@@ -1,4 +1,16 @@
 
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#rc()
+
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+
+filetype plugin indent on
+
 execute pathogen#infect()
 
 if has('win32') || has('win64')
@@ -23,7 +35,6 @@ else
 	set background=dark
 endif
 
-filetype plugin indent on
 let NERDSpaceDelims=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="low"
