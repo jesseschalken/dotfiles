@@ -18,6 +18,7 @@ set rtp+=~/.vim/bundle/vundle/
 
 call vundle#rc()
 
+Bundle 'vundle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
@@ -26,7 +27,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'matchit.zip'
 Bundle 'juvenn/mustache'
-Bundle 'StanAngeloff/php.vim'
+" Bundle 'StanAngeloff/php.vim'
 Bundle 'autohotkey-ahk'
 Bundle 'nerdtree'
 Bundle 'ervandew/supertab'
@@ -44,16 +45,15 @@ Bundle 'indenthtml.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'molokai'
+Bundle 'jellybeans.vim'
 
 filetype plugin indent on
 
 if has('gui_running')
-	colorscheme hemisu
-	set background=dark
+	colorscheme ir_black
 	set lines=60
 	set columns=120
 else
-	colorscheme default
 	set background=dark
 endif
 
@@ -79,8 +79,8 @@ set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
 set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
-set foldlevelstart=0
 set foldmethod=syntax
+set foldlevelstart=99
 set formatoptions=tcqroa
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
@@ -121,6 +121,7 @@ set softtabstop=4
 set spelllang=en_au,en
 set tabstop=4
 set tags=./tags;/
+set textwidth=78
 set ttyfast
 set updatetime=1
 set visualbell
@@ -128,6 +129,5 @@ set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
-set textwidth=78
 syntax on
 
