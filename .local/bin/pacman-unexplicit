@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -z "$*" ]
+then
+	pacman -Q --deps -i
+else
+	pacman -D --asdep "$@"
+fi

@@ -1,0 +1,2 @@
+#!/bin/sh
+pacman -R --recursive `pacman -Qq --unrequired --deps`
