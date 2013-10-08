@@ -36,12 +36,11 @@ Bundle 'Smart-Tabs'
 filetype plugin indent on
 syntax on
 
+colorscheme molokai
+
 if has('gui_running')
-	colorscheme gentooish
 	set lines=60
 	set columns=120
-else
-	set background=dark
 endif
 
 let NERDSpaceDelims=1
