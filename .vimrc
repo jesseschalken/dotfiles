@@ -47,6 +47,7 @@ let NERDSpaceDelims=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="low"
 let php_folding=1
+
 noremap , ;
 noremap ; :
 noremap <C-ScrollWheelDown> :tn<CR>
@@ -57,6 +58,7 @@ noremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap <space> za
 noremap j gj
 noremap k gk
+
 set autoread
 set autowrite
 set backspace=indent,eol,start
@@ -79,7 +81,6 @@ set indentexpr=
 set laststatus=2
 set lazyredraw
 set linebreak
-set list
 set listchars=tab:»\ ,trail:·,extends:→,precedes:←
 set makeprg=php\ -l\ %
 set more
@@ -94,6 +95,7 @@ set noequalalways
 set noerrorbells
 set noexpandtab
 set noignorecase
+set nolist
 set nonumber
 set nosmartcase
 set nosmartindent
