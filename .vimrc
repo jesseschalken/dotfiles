@@ -65,7 +65,6 @@ set backspace=indent,eol,start
 set nocindent
 set cinoptions=(0,u0,U0,+0,j1,J1
 set encoding=utf-8
-set errorformat=%m\ in\ %f\ on\ line\ %l
 set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=99
@@ -82,7 +81,6 @@ set laststatus=2
 set lazyredraw
 set linebreak
 set listchars=tab:»\ ,trail:·,extends:→,precedes:←
-set makeprg=php\ -l\ %
 set more
 set mouse=a
 set mousefocus
