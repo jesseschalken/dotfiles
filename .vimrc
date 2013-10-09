@@ -62,7 +62,7 @@ noremap k gk
 set autoread
 set autowrite
 set backspace=indent,eol,start
-set cindent
+set nocindent
 set cinoptions=(0,u0,U0,+0,j1,J1
 set encoding=utf-8
 set errorformat=%m\ in\ %f\ on\ line\ %l
@@ -88,7 +88,7 @@ set mouse=a
 set mousefocus
 set mousemodel=extend
 set noautochdir
-set noautoindent
+set autoindent
 set nocompatible
 set nocul
 set noequalalways
@@ -98,7 +98,7 @@ set noignorecase
 set nolist
 set nonumber
 set nosmartcase
-set nosmartindent
+set smartindent
 set nospell
 set noswapfile
 set nowrapscan
