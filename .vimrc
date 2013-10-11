@@ -59,10 +59,10 @@ noremap <space> za
 noremap j gj
 noremap k gk
 
+set autoindent
 set autoread
 set autowrite
 set backspace=indent,eol,start
-set nocindent
 set cinoptions=(0,u0,U0,+0,j1,J1
 set encoding=utf-8
 set fileformats=unix,dos
@@ -86,7 +86,7 @@ set mouse=a
 set mousefocus
 set mousemodel=extend
 set noautochdir
-set autoindent
+set nocindent
 set nocompatible
 set nocul
 set noequalalways
@@ -96,9 +96,9 @@ set noignorecase
 set nolist
 set nonumber
 set nosmartcase
-set smartindent
 set nospell
 set noswapfile
+set nowrap
 set nowrapscan
 set number
 set ruler
@@ -108,6 +108,7 @@ set showcmd
 set showmatch
 set showmode
 set showtabline=2
+set smartindent
 set smarttab
 set softtabstop=0
 set spelllang=en_au,en
@@ -120,7 +121,6 @@ set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
-set wrap
 
 if has('win32') || has('win64')
 	set guifont=Consolas:h10
