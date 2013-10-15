@@ -69,7 +69,7 @@ set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=99
 set foldmethod=syntax
-set formatoptions=tcqroa
+set formatoptions=roq
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
 set guioptions=gi
@@ -98,7 +98,6 @@ set nonumber
 set nosmartcase
 set nospell
 set noswapfile
-set nowrap
 set nowrapscan
 set number
 set ruler
@@ -121,6 +120,7 @@ set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
+set wrap
 
 if has('win32') || has('win64')
 	set guifont=Consolas:h10
