@@ -128,6 +128,6 @@ elseif has('mac')
 	set guifont=Menlo:h14
 	set guioptions+=e
 else
-	set guifont=Monospace\ 10
+	set guifont=Monospace\ 12
 endif
 
