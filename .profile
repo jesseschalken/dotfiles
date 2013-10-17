@@ -4,7 +4,6 @@ export CLICOLOR=1
 export LESS=~RS
 export SHELL=zsh
 export PAGER=less
-export TERM=xterm-256color
 
 if brew --prefix coreutils > /dev/null 2>&1
 then
