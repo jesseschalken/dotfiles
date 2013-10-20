@@ -87,7 +87,6 @@ set mousefocus
 set mousemodel=extend
 set noautochdir
 set nocindent
-set nocompatible
 set nocul
 set noequalalways
 set noerrorbells
