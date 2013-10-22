@@ -9,12 +9,13 @@
 	br = branch -vv
 	ci = commit -v
 	co = checkout
-	df = diff -w
+	df = diff
 	ds = diff --stat
-	dw = diff -w --color-words
+	dw = diff --color-words
 	lg = log --full-history
 	ls = ls-files
 	st = status
+	aa = add --all
 	rawlog = log --pretty=raw
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
 [color]
