@@ -127,7 +127,7 @@ elseif has('mac')
 	set guifont=Menlo:h14
 	set guioptions+=e
 else
-	set guifont=Monospace\ 11
+	set guifont=Monospace\ 10
 endif
 
 if $COLORTERM == 'gnome-terminal'
