@@ -9,9 +9,9 @@
 	br = branch -vv
 	ci = commit -v
 	co = checkout
-	df = diff
-	ds = diff --stat
-	dw = diff --color-words
+	df = diff -w
+	ds = diff -w --stat
+	dw = diff -w --color-words
 	lg = log --full-history
 	ls = ls-files
 	st = status
