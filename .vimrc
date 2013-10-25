@@ -72,7 +72,7 @@ set foldmethod=syntax
 set formatoptions=roq
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
-set guioptions=gi
+set guioptions=gia
 set hidden
 set hlsearch
 set incsearch
@@ -86,6 +86,7 @@ set mouse=a
 set mousefocus
 set mousemodel=extend
 set noautochdir
+set clipboard=unnamedplus
 set nocindent
 set nocul
 set noequalalways
