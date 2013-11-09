@@ -28,23 +28,23 @@
 [i18n]
 	filesEncoding = utf-8
 [color "branch"]
-	current  = bold blue reverse
+	current  = bold blue blue
 	local    = bold blue
 	remote   = bold magenta
 	upstream = bold magenta
-	nobranch = bold red reverse
+	nobranch = bold red red
 [color "diff"]
-	frag       = bold blue reverse
-	meta       = dim normal
+	frag       = bold blue blue
+	meta       = bold black black
 	new        = bold green normal
-	func       = bold white reverse
+	func       = black white
 	old        = bold red normal
-	whitespace = bold red reverse
+	whitespace = bold red red
 	plain      = normal
 [color "status"]
 	header    = dim normal
-	branch    = bold blue reverse
-	nobranch  = bold red reverse
+	branch    = bold blue blue
+	nobranch  = bold red red
 	added     = bold green
 	updated   = bold green
 	changed   = bold yellow
@@ -55,7 +55,7 @@
 	remoteBranch = bold magenta
 	tag          = bold green
 	stash        = bold cyan
-	HEAD         = bold blue reverse
+	HEAD         = bold blue blue
 [merge]
 	conflictstyle = diff3
 	renameLimit = 50000
@@ -66,7 +66,7 @@
 	abbrevCommit = true
 	decorate     = short
 [format]
-	pretty = format:%C(yellow bold)%h%Creset %C(dim)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset %C(magenta bold)%an%Creset %C(normal)%s%Creset%C(bold blue)%d%Creset
+	pretty = format:%C(yellow bold)%h%Creset %C(bold black)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset %C(magenta bold)%an%Creset %C(normal)%s%Creset%C(bold blue)%d%Creset
 [pager]
 	branch = true
 [diff]
