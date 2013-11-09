@@ -96,7 +96,7 @@ set noignorecase
 set nolist
 set nonumber
 set nosmartcase
-set spell
+set nospell
 set noswapfile
 set nowrapscan
 set number
