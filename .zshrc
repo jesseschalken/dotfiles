@@ -9,7 +9,7 @@ source ~/.zprofile
 KEYTIMEOUT=1
 PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
 MODE_INDICATOR="%{$bold_color%}NORMAL%{$reset_color%} "
-RPROMPT="\$(vi_mode_prompt_info)%{$bold_color$fg[black]%}%n@%M%{$reset_color%}"
+RPROMPT="\$(vi_mode_prompt_info)%{"$'\e'"[$color[faint]m%}%n@%M%{$reset_color%}"
 
 setopt appendhistory
 setopt autocd
