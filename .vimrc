@@ -86,7 +86,7 @@ set mouse=a
 set mousefocus
 set mousemodel=extend
 set noautochdir
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 set nocindent
 set nocul
 set noequalalways
