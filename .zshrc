@@ -7,7 +7,14 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zprofile
 
 KEYTIMEOUT=1
-PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
+
+if [ $EUID = 0 ]
+then
+	PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[red]$bg[red]%}λ%{$reset_color%} "
+else
+	PROMPT="%{$fg[grey]$bg[white]%}%~%{$reset_color%} %{$bold_color$fg[blue]$bg[blue]%}λ%{$reset_color%} "
+fi
+
 MODE_INDICATOR="%{$bold_color%}NORMAL%{$reset_color%} "
 RPROMPT="\$(vi_mode_prompt_info)%{"$'\e'"[$color[faint]m%}%n@%M%{$reset_color%}"
 
