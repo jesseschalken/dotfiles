@@ -62,11 +62,10 @@
 [mergetool]
 	keepBackup = false
 [log]
-	date         = short
 	abbrevCommit = true
 	decorate     = short
 [format]
-	pretty = format:%C(yellow bold)%h%Creset %C(dim)%t%Creset %C(cyan bold)%ad%Creset %C(red bold)%p%Creset %C(magenta bold)%an%Creset %C(normal)%s%Creset%C(bold blue)%d%Creset
+	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(dim)%<(14)%ar%Creset %C(normal)%s%Creset
 [pager]
 	branch = true
 [diff]
