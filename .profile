@@ -1,9 +1,9 @@
-export EDITOR=vim
+export EDITOR='vim'
 export GREP_OPTIONS='--color=auto'
-export CLICOLOR=1
-export LESS=~RS
-export SHELL=zsh
-export PAGER=less
+export CLICOLOR='1'
+export LESS='~RS'
+export SHELL='zsh'
+export PAGER='less'
 
 if brew --prefix coreutils > /dev/null 2>&1
 then
