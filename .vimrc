@@ -32,6 +32,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
 Bundle 'Smart-Tabs'
+Bundle 'leafgarland/typescript-vim'
 
 filetype plugin indent on
 syntax on
