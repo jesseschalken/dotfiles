@@ -6,7 +6,7 @@
 [push]
 	default = tracking
 [alias]
-	br = branch -vv
+	br = --paginate branch -vv
 	ci = commit -v
 	co = checkout
 	df = diff -w
