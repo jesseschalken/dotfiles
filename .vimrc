@@ -119,7 +119,7 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set visualbell
+set novisualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
