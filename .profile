@@ -4,6 +4,7 @@ export CLICOLOR='1'
 export LESS='~RS'
 export SHELL='zsh'
 export PAGER='less'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
 if brew --prefix coreutils > /dev/null 2>&1
 then

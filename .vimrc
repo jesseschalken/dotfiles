@@ -32,6 +32,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'molokai'
 Bundle 'jellybeans.vim'
 Bundle 'Smart-Tabs'
+Bundle 'leafgarland/typescript-vim'
 
 filetype plugin indent on
 syntax on
@@ -88,7 +89,7 @@ set mouse=a
 set mousefocus
 set mousemodel=extend
 set noautochdir
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 set nocindent
 set nocul
 set noequalalways
@@ -118,7 +119,7 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set visualbell
+set novisualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0

@@ -65,9 +65,7 @@
 	abbrevCommit = true
 	decorate     = short
 [format]
-	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(dim)%<(16)%ar%Creset %C(normal)%s%Creset
-[pager]
-	branch = true
+	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(dim)%<(16)%ar%Creset%C(bold magenta)%d%Creset %C(normal)%s%Creset
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
 	renames = copies
