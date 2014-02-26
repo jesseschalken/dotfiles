@@ -4,7 +4,7 @@
 [core]
 	whitespace = -blank-at-eol,space-before-tab,-blank-at-eof
 [push]
-	default = tracking
+	default = simple
 [alias]
 	br = branch -vv
 	ci = commit -v
