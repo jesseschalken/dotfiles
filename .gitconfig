@@ -30,8 +30,8 @@
 [color "branch"]
 	current  = bold blue reverse
 	local    = bold blue
-	remote   = bold magenta
-	upstream = bold magenta
+	remote   = bold green
+	upstream = bold green
 	nobranch = bold red reverse
 [color "diff"]
 	frag       = bold blue reverse
@@ -52,7 +52,7 @@
 	untracked = bold red
 [color "decorate"]
 	branch       = bold blue
-	remoteBranch = bold magenta
+	remoteBranch = bold green
 	tag          = bold green
 	stash        = bold cyan
 	HEAD         = bold blue reverse
@@ -65,7 +65,7 @@
 	abbrevCommit = true
 	decorate     = short
 [format]
-	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(dim)%<(16)%ar%Creset%C(bold magenta)%d%Creset %C(normal)%s%Creset
+	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(dim)%<(16)%ar%Creset %C(normal)%s%Creset%C(bold magenta)%d%Creset
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
 	renames = copies
