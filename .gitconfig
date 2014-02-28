@@ -4,7 +4,7 @@
 [core]
 	whitespace = -blank-at-eol,space-before-tab,-blank-at-eof
 [push]
-	default = tracking
+	default = simple
 [alias]
 	br = branch -vv
 	ci = commit -v
@@ -30,8 +30,8 @@
 [color "branch"]
 	current  = bold blue reverse
 	local    = bold blue
-	remote   = bold magenta
-	upstream = bold magenta
+	remote   = bold green
+	upstream = bold green
 	nobranch = bold red reverse
 [color "diff"]
 	frag       = bold blue reverse
@@ -52,7 +52,7 @@
 	untracked = bold red
 [color "decorate"]
 	branch       = bold blue
-	remoteBranch = bold magenta
+	remoteBranch = bold green
 	tag          = bold green
 	stash        = bold cyan
 	HEAD         = bold blue reverse

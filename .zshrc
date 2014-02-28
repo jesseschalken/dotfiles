@@ -54,3 +54,12 @@ bindkey -M vicmd '^[' vi-cmd-mode
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+function cd() {
+	if (( ARGC == 0 ))
+	then
+		popd
+	else
+		builtin cd "$@"
+	fi
+}
+

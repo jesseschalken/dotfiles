@@ -95,7 +95,7 @@ set nocul
 set noequalalways
 set noerrorbells
 set noexpandtab
-set noignorecase
+set ignorecase
 set nolist
 set nonumber
 set nosmartcase
