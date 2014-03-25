@@ -16,7 +16,7 @@
 	ls = ls-files
 	st = status
 	aa = add --all
-	rawlog = log --pretty=raw
+	rawlog = log --pretty=raw --decorate --graph
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
 [color]
 	branch      = true
