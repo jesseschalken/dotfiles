@@ -119,11 +119,13 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set novisualbell
+set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
+set noerrorbells
+set t_vb=
 
 if has('win32') || has('win64')
     set guifont=Consolas:h10
