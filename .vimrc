@@ -40,8 +40,8 @@ syntax on
 colorscheme molokai
 
 if has('gui_running')
-	set lines=60
-	set columns=120
+    set lines=60
+    set columns=120
 endif
 
 let NERDSpaceDelims=1
@@ -94,7 +94,7 @@ set nocindent
 set nocul
 set noequalalways
 set noerrorbells
-set noexpandtab
+set expandtab
 set ignorecase
 set nolist
 set nonumber
@@ -126,11 +126,11 @@ set winminwidth=0
 set wrap
 
 if has('win32') || has('win64')
-	set guifont=Consolas:h10
+    set guifont=Consolas:h10
 elseif has('mac')
-	set guifont=Menlo:h14
-	set guioptions+=e
+    set guifont=Menlo:h14
+    set guioptions+=e
 else
-	set guifont=Monospace\ 10
+    set guifont=Monospace\ 10
 endif
 
