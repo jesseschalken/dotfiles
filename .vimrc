@@ -33,6 +33,7 @@ Bundle 'molokai'
 Bundle 'jellybeans.vim'
 Bundle 'Smart-Tabs'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'dag/vim-fish'
 
 filetype plugin indent on
 syntax on
