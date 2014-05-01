@@ -2,7 +2,6 @@ export EDITOR='vim'
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR='1'
 export LESS='~RS'
-export SHELL='zsh'
 export PAGER='less'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
