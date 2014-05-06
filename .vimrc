@@ -33,6 +33,7 @@ Bundle 'molokai'
 Bundle 'jellybeans.vim'
 Bundle 'Smart-Tabs'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'dag/vim-fish'
 
 filetype plugin indent on
 syntax on
@@ -40,8 +41,8 @@ syntax on
 colorscheme molokai
 
 if has('gui_running')
-	set lines=60
-	set columns=120
+    set lines=60
+    set columns=120
 endif
 
 let NERDSpaceDelims=1
@@ -93,7 +94,7 @@ set nocindent
 set nocul
 set noequalalways
 set noerrorbells
-set noexpandtab
+set expandtab
 set ignorecase
 set nolist
 set nonumber
@@ -118,18 +119,23 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set novisualbell
+set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
+set noerrorbells
+set t_vb=
 
 if has('win32') || has('win64')
-	set guifont=Consolas:h10
+    set guifont=Consolas:h10
 elseif has('mac')
-	set guifont=Menlo:h14
-	set guioptions+=e
+    set guifont=Menlo:h14
+    set guioptions+=e
 else
-	set guifont=Monospace\ 10
+    set guifont=Monospace\ 10
 endif
 
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
