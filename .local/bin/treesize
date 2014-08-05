@@ -4,7 +4,7 @@
 function do_scan($dir) {
     $total = 1;
 
-    if (is_dir($dir) && !is_link($dir) ) {
+    if (is_dir($dir) && !is_link($dir)) {
         foreach (scandir($dir) as $file)
             if ($file !== '.' && $file !== '..')
                 $total += do_scan("$dir/$file");
