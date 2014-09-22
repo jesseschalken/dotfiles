@@ -1,9 +1,10 @@
 [global_config]
   handle_size = 5
-  enabled_plugins = ,
+  title_hide_sizetext = True
   focus = mouse
   title_transmit_fg_color = "#804000"
   title_inactive_fg_color = "#80c0ff"
+  enabled_plugins = ,
   title_receive_bg_color = "#400080"
   title_transmit_bg_color = "#ffc080"
   title_receive_fg_color = "#c080ff"
@@ -23,10 +24,9 @@
     use_system_font = False
     cursor_color = "#ff0080"
     foreground_color = "#ffffff"
+    scroll_on_output = False
     copy_on_selection = True
-    audible_bell = True
     scrollback_lines = 10000000
-    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
