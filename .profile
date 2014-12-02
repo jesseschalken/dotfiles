@@ -1,5 +1,4 @@
 export EDITOR='vim'
-export GREP_OPTIONS='--color=auto'
 export CLICOLOR='1'
 export LESS='~RS'
 export PAGER='less'
