@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ -z "$*" ]
 then
-	pacman -Q --explicit -i
+	pacman -Q --explicit -q
 else
 	pacman -D --asexplicit "$@"
 fi
