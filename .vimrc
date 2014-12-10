@@ -93,7 +93,6 @@ set noautochdir
 set nocindent
 set nocul
 set noequalalways
-set noerrorbells
 set expandtab
 set ignorecase
 set nolist
@@ -119,13 +118,14 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
-set noerrorbells
-set t_vb=
+
+" see http://vim.wikia.com/wiki/Disable_beeping
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 if has('win32') || has('win64')
     set guifont=Consolas:h10
