@@ -19,7 +19,7 @@
 	rawlog = "log --pretty=raw --decorate --graph"
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
 	derp = merge --abort
-	recent = for-each-ref --sort=-committerdate refs/heads/
+	recent = -p for-each-ref --sort=-committerdate
 [color]
 	branch      = true
 	diff        = true
