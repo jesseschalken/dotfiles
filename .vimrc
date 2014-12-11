@@ -1,39 +1,39 @@
-set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after,~/.vim/bundle/vundle/
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after,~/.vim/bundle/Vundle.vim/
 set nocompatible
 filetype off
 
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Align'
-Bundle 'bufexplorer.zip'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'matchit.zip'
-Bundle 'juvenn/mustache'
-Bundle 'autohotkey-ahk'
-Bundle 'nerdtree'
-Bundle 'ervandew/supertab'
-Bundle 'jesseschalken/list-text-object'
-Bundle 'Mustang2'
-Bundle 'elise.vim'
-Bundle 'elisex.vim'
-Bundle 'Gentooish'
-Bundle 'lettuce.vim'
-Bundle 'scite-colors'
-Bundle 'Wombat'
-Bundle 'wesgibbs/vim-irblack'
-Bundle 'noahfrederick/vim-hemisu'
-Bundle 'indenthtml.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'molokai'
-Bundle 'jellybeans.vim'
-Bundle 'Smart-Tabs'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'dag/vim-fish'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Align'
+Plugin 'bufexplorer.zip'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'matchit.zip'
+Plugin 'juvenn/mustache'
+Plugin 'autohotkey-ahk'
+Plugin 'ervandew/supertab'
+Plugin 'jesseschalken/list-text-object'
+Plugin 'Mustang2'
+Plugin 'elise.vim'
+Plugin 'elisex.vim'
+Plugin 'Gentooish'
+Plugin 'lettuce.vim'
+Plugin 'scite-colors'
+Plugin 'Wombat'
+Plugin 'wesgibbs/vim-irblack'
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'indenthtml.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tomasr/molokai'
+Plugin 'jellybeans.vim'
+Plugin 'Smart-Tabs'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'dag/vim-fish'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
@@ -93,7 +93,6 @@ set noautochdir
 set nocindent
 set nocul
 set noequalalways
-set noerrorbells
 set expandtab
 set ignorecase
 set nolist
@@ -119,13 +118,14 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
-set noerrorbells
-set t_vb=
+
+" see http://vim.wikia.com/wiki/Disable_beeping
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 if has('win32') || has('win64')
     set guifont=Consolas:h10
