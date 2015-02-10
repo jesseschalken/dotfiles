@@ -23,6 +23,8 @@ set fish_pager_color_description 555
 set fish_pager_color_prefix --bold
 set fish_pager_color_progress cyan --bold
 
+set PATH ~/.local/bin $PATH
+
 function fish_prompt
     set_color -b ccc 000
     echo -n $PWD | sed -e "s|^$HOME|~|"
