@@ -86,7 +86,6 @@ set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=99
 set foldmethod=syntax
-set foldcolumn=3
 set formatoptions=roq
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
