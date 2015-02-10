@@ -135,6 +135,7 @@ set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
+set cursorline
 
 " see http://vim.wikia.com/wiki/Disable_beeping
 set noerrorbells visualbell t_vb=
