@@ -52,7 +52,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-colorscheme molokai
+colorscheme github
 
 if has('gui_running')
     set lines=60
