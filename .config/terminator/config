@@ -5,9 +5,9 @@
   title_transmit_fg_color = "#804000"
   title_inactive_fg_color = "#80c0ff"
   enabled_plugins = ,
-  title_receive_bg_color = "#400080"
+  title_receive_bg_color = "#c080ff"
   title_transmit_bg_color = "#ffc080"
-  title_receive_fg_color = "#c080ff"
+  title_receive_fg_color = "#400080"
   inactive_color_offset = 1.0
   title_inactive_bg_color = "#003f80"
 [keybindings]
