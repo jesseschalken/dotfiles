@@ -64,6 +64,10 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="low"
 let g:solarized_termcolors=256
 let php_folding=1
+let php_phpdoc_folding=1
+let php_var_selector_is_identifier=1
+let php_parent_error_close=1
+let php_parent_error_open=1
 
 noremap , ;
 noremap ; :
