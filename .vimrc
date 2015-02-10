@@ -1,44 +1,58 @@
-set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after,~/.vim/bundle/vundle/
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after,~/.vim/bundle/Vundle.vim/
 set nocompatible
 filetype off
 
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Align'
-Bundle 'bufexplorer.zip'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'matchit.zip'
-Bundle 'juvenn/mustache'
-Bundle 'autohotkey-ahk'
-Bundle 'nerdtree'
-Bundle 'ervandew/supertab'
-Bundle 'jesseschalken/list-text-object'
-Bundle 'Mustang2'
-Bundle 'elise.vim'
-Bundle 'elisex.vim'
-Bundle 'Gentooish'
-Bundle 'lettuce.vim'
-Bundle 'scite-colors'
-Bundle 'Wombat'
-Bundle 'wesgibbs/vim-irblack'
-Bundle 'noahfrederick/vim-hemisu'
-Bundle 'indenthtml.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'molokai'
-Bundle 'jellybeans.vim'
-Bundle 'Smart-Tabs'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'dag/vim-fish'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Align'
+Plugin 'bufexplorer.zip'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'matchit.zip'
+Plugin 'juvenn/mustache'
+Plugin 'swamplight'
+Plugin 'distinguished'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'autohotkey-ahk'
+Plugin 'ervandew/supertab'
+Plugin 'jesseschalken/list-text-object'
+Plugin 'Mustang2'
+Plugin 'proton'
+Plugin 'beauty256'
+Plugin 'strange'
+Plugin 'elise.vim'
+Plugin 'jeetsukumaran/vim-nefertiti'
+Plugin 'elisex.vim'
+Plugin 'Gentooish'
+Plugin 'lettuce.vim'
+Plugin 'scite-colors'
+Plugin 'Wombat'
+Plugin 'wesgibbs/vim-irblack'
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'indenthtml.vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tomasr/molokai'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'Smart-Tabs'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'dag/vim-fish'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'sandeepsinghmails/Dev_Delight'
+Plugin 'CSApprox'
+Plugin 'Junza/Spink'
+Plugin 'larssmit/vim-getafe'
+Plugin 'nice/sweater'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
 
-colorscheme molokai
+colorscheme github
 
 if has('gui_running')
     set lines=60
@@ -50,6 +64,10 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="low"
 let g:solarized_termcolors=256
 let php_folding=1
+let php_phpdoc_folding=1
+let php_var_selector_is_identifier=1
+let php_parent_error_close=1
+let php_parent_error_open=1
 
 noremap , ;
 noremap ; :
@@ -72,7 +90,6 @@ set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=99
 set foldmethod=syntax
-set foldcolumn=3
 set formatoptions=roq
 set grepprg=grep\ -nH\ $*
 set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
@@ -93,7 +110,6 @@ set noautochdir
 set nocindent
 set nocul
 set noequalalways
-set noerrorbells
 set expandtab
 set ignorecase
 set nolist
@@ -119,13 +135,15 @@ set tags=./tags;/
 set textwidth=78
 set ttyfast
 set updatetime=1
-set visualbell
 set wildmenu
 set winminheight=0
 set winminwidth=0
 set wrap
-set noerrorbells
-set t_vb=
+set cursorline
+
+" see http://vim.wikia.com/wiki/Disable_beeping
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 if has('win32') || has('win64')
     set guifont=Consolas:h10

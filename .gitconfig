@@ -17,8 +17,12 @@
 	ls = ls-files
 	st = status
 	aa = add --all
-	rawlog = log --pretty=raw --decorate --graph
+	rawlog = "log --pretty=raw --decorate --graph"
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
+	derp = merge --abort
+	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:white dim)%(committerdate:relative)%09 %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/ refs/remotes/
+	unadd = reset HEAD --
+	unchange = checkout HEAD --
 [color]
 	branch      = true
 	diff        = true
@@ -75,4 +79,4 @@
 [gc]
 	pruneexpire = now
 [credential]
-	helper = cache --timeout=86400
+	helper = store

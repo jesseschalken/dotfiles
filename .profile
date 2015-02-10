@@ -1,9 +1,8 @@
 export EDITOR='vim'
-export GREP_OPTIONS='--color=auto'
 export CLICOLOR='1'
 export LESS='~RS'
 export PAGER='less'
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true'
 
 if brew --prefix coreutils > /dev/null 2>&1
 then

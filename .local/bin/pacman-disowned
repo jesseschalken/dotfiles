@@ -1,3 +1,3 @@
 #!/bin/bash
 
-diff -u <(pacman -Qlq | sed -e 's#/$##' | sort -u) <(find / -xdev | sort)
+diff -u <(pacman -Qlq | sed -e 's#/$##' | sort -u) <(find / -xdev '-print' -path '/home' -prune | sort)
