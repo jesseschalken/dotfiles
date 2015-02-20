@@ -2,7 +2,6 @@
 
 for file in "$@"
 do
-	echo "Processing $file..."
 	echo "$(ffmpeg -v error -i "$file" -f u16le - | md5sum | cut -d ' ' -f 1)  $file"
 done
 
