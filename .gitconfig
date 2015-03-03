@@ -80,3 +80,5 @@
 	pruneexpire = now
 [credential]
 	helper = store
+[fetch]
+	prune = true
