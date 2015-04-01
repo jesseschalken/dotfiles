@@ -14,15 +14,11 @@ $clear = "\r\x1B[2K";
 ini_set('pcre.backtrack_limit', "90000000");
 ini_set('pcre.recursion_limit', "90000000");
 
-print "regex?\n";
-$regex = substr(fgets(STDIN), 0, -1);
-print "options? (see http://php.net/manual/en/reference.pcre.pattern.modifiers.php)\n";
-$options = substr(fgets(STDIN), 0, -1);
-print "replacement?\n";
-$replace = substr(fgets(STDIN), 0, -1);
+$regex   = readline("regex:\n");
+$replace = readline("replacement:\n");
 
 // Insert a "\" before each "#" preceded by an even number of "\"s
-$regex = "#" . preg_replace('#(?<!\\\\)((\\\\\\\\)*)(\#)#S', '$1\\\\$3', $regex) . "#sS$options";
+$regex = "#" . preg_replace('#(?<!\\\\)((\\\\\\\\)*)(\#)#S', '$1\\\\$3', $regex) . "#sS";
 $files = array_slice($argv, 1);
 $count = count($files);
 
