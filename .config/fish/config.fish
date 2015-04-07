@@ -13,7 +13,7 @@ set fish_color_escape blue --bold
 set fish_color_cwd green --bold
 
 set fish_color_cwd_root red --bold
-set fish_color_autosuggestion 666
+set fish_color_autosuggestion 555
 set fish_color_red red --bold
 set fish_color_history_current blue --bold
 set fish_color_valid_path --underline
@@ -42,7 +42,7 @@ function fish_prompt
 end
 
 function fish_right_prompt
-    set_color 666
+    set_color 555
     echo -s -n $USER '@' (hostname -s)
     set_color normal
 end
