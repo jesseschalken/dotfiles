@@ -20,7 +20,7 @@
 	rawlog = "log --pretty=raw --decorate --graph"
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
 	derp = merge --abort
-	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:white dim)%(committerdate:relative)%09 %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/ refs/remotes/
+	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:black bold)%(committerdate:relative)%09 %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/ refs/remotes/
 	unadd = reset HEAD --
 	unchange = checkout HEAD --
 [color]
@@ -40,14 +40,14 @@
 	nobranch = bold red reverse
 [color "diff"]
 	frag       = bold blue reverse
-	meta       = dim normal
+	meta       = bold black
 	new        = bold green normal
 	func       = bold white reverse
 	old        = bold red normal
 	whitespace = bold red reverse
 	plain      = normal
 [color "status"]
-	header    = dim normal
+	header    = bold black
 	branch    = bold blue reverse
 	nobranch  = bold red reverse
 	added     = bold green
@@ -70,7 +70,7 @@
 	abbrevCommit = true
 	decorate     = short
 [format]
-	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(dim)%<(16)%ar%Creset %C(normal)%s%Creset%C(magenta bold)%d%Creset
+	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(bold black)%<(16)%ar%Creset %C(normal)%s%Creset%C(magenta bold)%d%Creset
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
 	renames = copies
