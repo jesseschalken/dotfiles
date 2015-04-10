@@ -1,50 +1,22 @@
-set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after,~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim/
 set nocompatible
 filetype off
 
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Align'
-Plugin 'bufexplorer.zip'
-Plugin 'hhvm/vim-hack'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'matchit.zip'
-Plugin 'juvenn/mustache'
-Plugin 'swamplight'
-Plugin 'distinguished'
-Plugin 'endel/vim-github-colorscheme'
-Plugin 'autohotkey-ahk'
-Plugin 'ervandew/supertab'
-Plugin 'jesseschalken/list-text-object'
-Plugin 'Mustang2'
-Plugin 'proton'
-Plugin 'beauty256'
-Plugin 'strange'
-Plugin 'elise.vim'
-Plugin 'jeetsukumaran/vim-nefertiti'
-Plugin 'elisex.vim'
-Plugin 'Gentooish'
-Plugin 'lettuce.vim'
-Plugin 'scite-colors'
-Plugin 'Wombat'
-Plugin 'wesgibbs/vim-irblack'
-Plugin 'noahfrederick/vim-hemisu'
-Plugin 'indenthtml.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tomasr/molokai'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'Smart-Tabs'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'dag/vim-fish'
-Plugin 'sandeepsinghmails/Dev_Delight'
-Plugin 'Junza/Spink'
-Plugin 'larssmit/vim-getafe'
-Plugin 'nice/sweater'
+Plugin 'gmarik/Vundle.vim' " Vundle itself
+Plugin 'kchmck/vim-coffee-script' " CoffeeScript support
+Plugin 'hhvm/vim-hack' " Hack language support
+Plugin 'matchit.zip' " % matching for more languages
+Plugin 'juvenn/mustache' " Mustache template support
+Plugin 'autohotkey-ahk' " AutoHotkey script support
+Plugin 'ervandew/supertab' " Use <Tab> for completion
+Plugin 'jesseschalken/list-text-object' " More text objects 
+Plugin 'tpope/vim-fugitive' " Git support
+Plugin 'tomtom/tcomment_vim' " Use 'gc' to comment/uncomment
+Plugin 'tomasr/molokai' " Molokai color scheme
+Plugin 'leafgarland/typescript-vim' " TypeScript support
+Plugin 'dag/vim-fish' " Fish shell script support
 
 call vundle#end()
 
@@ -58,22 +30,11 @@ if has('gui_running')
     set columns=120
 endif
 
-let NERDSpaceDelims=1
-let g:solarized_contrast="high"
-let g:solarized_visibility="low"
-let g:solarized_termcolors=256
 let php_folding=1
 let php_phpdoc_folding=1
-let php_var_selector_is_identifier=1
-let php_parent_error_close=1
-let php_parent_error_open=1
 
-noremap , ;
 noremap ; :
-noremap <C-ScrollWheelDown> :tn<CR>
-noremap <C-ScrollWheelUp> :tp<CR>
-noremap <C-j> :bprev<CR>
-noremap <C-k> :bnext<CR>
+noremap , ;
 noremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap <space> za
 noremap j gj
@@ -91,7 +52,6 @@ set foldlevelstart=99
 set foldmethod=syntax
 set formatoptions=roq
 set grepprg=grep\ -nH\ $*
-set guicursor=n-v-c:block-Cursor/lCursor,a:blinkwait1000-blinkoff500-blinkon500,i-ci:ver25-Cursor/lCursor,o:hor50-Cursor,r-cr:hor25-Cursor/lCursor,sm:block-Cursor,ve:ver25-Cursor
 set guioptions=gia
 set hidden
 set hlsearch
