@@ -1,0 +1,8 @@
+#!/usr/bin/php
+<?php
+
+$json = file_get_contents('php://stdin');
+$json = json_decode($json);
+$json = json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+print $json;
+
