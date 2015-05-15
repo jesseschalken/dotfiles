@@ -1,0 +1,35 @@
+#!/usr/bin/php
+<?php
+
+function fix_permissions($path) {
+    $type = filetype($path);
+    $exec = false;
+
+    if ($type === 'dir') {
+        foreach (array_diff(scandir($path), ['.', '..']) as $p) {
+            fix_permissions($path . DIRECTORY_SEPARATOR . $p);
+        }
+        $exec = true;
+    } else if ($type === 'file') {
+        $top = file_get_contents($path, false, null, 0, 10);
+        if (
+            substr($top, 0, 2) === '#!' ||
+            substr($top, 0, 4) === "\x7fELF"
+        ) {
+            $exec = true;
+        }
+    }
+
+    $new = $exec ? 0755 : 0644;
+    $old = fileperms($path) & 0777;
+
+    if ($old !== $new) {
+        print decoct($old) . ' => ' . decoct($new) . "  $path\n";
+        chmod($path, $new);
+    }
+}
+
+foreach (array_slice($argv, 1) as $path) {
+    fix_permissions($path);
+}
+
