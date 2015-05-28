@@ -1,7 +1,11 @@
 #!/usr/bin/php
 <?php
 
+$umask = umask();
+
 function fix_permissions($path) {
+    global $umask;
+
     $type = filetype($path);
     $exec = false;
 
@@ -20,7 +24,7 @@ function fix_permissions($path) {
         }
     }
 
-    $new = $exec ? 0755 : 0644;
+    $new = ~$umask & ($exec ? 0777 : 0666);
     $old = fileperms($path) & 0777;
 
     if ($old !== $new) {
