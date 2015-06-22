@@ -22,6 +22,8 @@ function fix_permissions($path) {
         ) {
             $exec = true;
         }
+    } else if ($type === 'link') {
+        return;
     }
 
     $new = ~$umask & ($exec ? 0777 : 0666);
