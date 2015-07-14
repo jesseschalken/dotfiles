@@ -76,6 +76,7 @@
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
 	renames = copies
+	renameLimit = 50000
 [gui]
 	diffcontext = 10
 [gc]
