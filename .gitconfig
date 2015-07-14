@@ -23,6 +23,7 @@
 	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:black bold)%(committerdate:relative)%09 %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/ refs/remotes/
 	unadd = reset HEAD --
 	unchange = checkout HEAD --
+	merge-log = "!git log \"$1^..$1\""
 [color]
 	branch      = true
 	diff        = true
@@ -69,8 +70,9 @@
 [log]
 	abbrevCommit = true
 	decorate     = short
+	date         = short
 [format]
-	pretty = format:%C(green bold)%<(8)%h%Creset %C(blue bold)%<(20)%an%Creset %C(bold black)%<(16)%ar%Creset %C(normal)%s%Creset%C(magenta bold)%d%Creset
+	pretty = format:%C(blue bold)%>(25)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(12)%ad%Creset %C(normal)%s%Creset%C(magenta bold)%d%Creset
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
 	renames = copies
