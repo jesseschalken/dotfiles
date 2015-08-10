@@ -6,7 +6,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " Vundle itself
 Plugin 'kchmck/vim-coffee-script' " CoffeeScript support
-Plugin 'hhvm/vim-hack' " Hack language support
 Plugin 'matchit.zip' " % matching for more languages
 Plugin 'juvenn/mustache' " Mustache template support
 Plugin 'autohotkey-ahk' " AutoHotkey script support
