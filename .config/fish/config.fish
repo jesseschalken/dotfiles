@@ -34,7 +34,7 @@ function fish_prompt
         case root
             set_color -o -b 900 f33
         case '*'
-            set_color -o -b 00c 66f
+            set_color -o -b 00f 99f
     end
     echo -n 'λ'
     set_color -b normal normal
