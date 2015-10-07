@@ -1,6 +1,6 @@
 export EDITOR='vim'
 export CLICOLOR='1'
-export LESS='~RS'
+export LESS='~RSx4'
 export PAGER='less'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true'
 
