@@ -32,9 +32,9 @@ function fish_prompt
     echo -n ' '
     switch $USER
         case root
-            set_color -o -b 900 f33
+            set_color -o -b 800 f66
         case '*'
-            set_color -o -b 00f 99f
+            set_color -o -b 00f 88f
     end
     echo -n 'λ'
     set_color -b normal normal
