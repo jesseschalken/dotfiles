@@ -27,7 +27,7 @@ set PATH ~/.local/bin $PATH
 
 function fish_prompt
     set_color -b ccc 000
-    echo -n $PWD | sed -e "s|^$HOME|~|"
+    echo -n $PWD | perl -p -e "s|^$HOME|~|"
     set_color -b normal normal
     echo -n ' '
     switch $USER
