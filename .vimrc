@@ -106,7 +106,7 @@ autocmd GUIEnter * set visualbell t_vb=
 if has('win32') || has('win64')
     set guifont=Consolas:h10
 elseif has('mac')
-    set guifont=Menlo:h14
+    set guifont=Menlo:h12
     set guioptions+=e
 else
     set guifont=Monospace\ 10
