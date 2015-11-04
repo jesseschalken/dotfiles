@@ -13,5 +13,9 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/man:$MANPATH"
 
-eval "$(dircolors -b)"
+if command -v dircolors > /dev/null 2>&1
+then
+    eval "$(dircolors -b)"
+fi
+
 
