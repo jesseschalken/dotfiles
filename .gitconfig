@@ -18,7 +18,7 @@
 	st = status
 	aa = add --all
 	rawlog = "log --pretty=raw --decorate --graph"
-	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs git branch -d
+	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs -r git branch -d
 	derp = merge --abort
 	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:black bold)%(committerdate:relative) %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/
 	unadd = reset HEAD --
