@@ -1,3 +1,4 @@
+set rtp+=~/.opam/system/share/merlin/vim/
 set rtp+=~/.vim/bundle/Vundle.vim/
 set nocompatible
 filetype off
@@ -16,6 +17,7 @@ Plugin 'tomtom/tcomment_vim' " Use 'gc' to comment/uncomment
 Plugin 'tomasr/molokai' " Molokai color scheme
 Plugin 'leafgarland/typescript-vim' " TypeScript support
 Plugin 'dag/vim-fish' " Fish shell script support
+Plugin 'hhvm/vim-hack' " Hack lang support
 
 call vundle#end()
 
@@ -64,7 +66,7 @@ set more
 set mouse=a
 set mousefocus
 set mousemodel=extend
-set noautochdir
+set autochdir
 set nocindent
 set nocul
 set noequalalways
