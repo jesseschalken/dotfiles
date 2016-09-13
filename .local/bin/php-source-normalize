@@ -1,0 +1,73 @@
+#!/usr/bin/env php
+<?php
+
+namespace JEHKBFSWLGRJKRG;
+
+use PhpParser\Node\Expr;
+
+require_once __DIR__ . '/../../.composer/vendor/autoload.php';
+
+class PrettyPrinter extends \PhpParser\PrettyPrinter\Standard {
+    public function pStmt_Interface(\PhpParser\Node\Stmt\Interface_ $node) {
+        return 'interface ' . $node->name
+        . (!empty($node->extends) ? ' extends ' . $this->pCommaSeparated($node->extends) : '')
+        . ' {' . $this->pStmts($node->stmts) . "\n" . '}';
+    }
+
+    public function pStmt_Function(\PhpParser\Node\Stmt\Function_ $node) {
+        return 'function ' . ($node->byRef ? '&' : '') . $node->name
+        . '(' . $this->pCommaSeparated($node->params) . ')'
+        . (null !== $node->returnType ? ' : ' . $this->pType($node->returnType) : '')
+        . ' {' . $this->pStmts($node->stmts) . "\n" . '}';
+    }
+
+    public function pStmt_Trait(\PhpParser\Node\Stmt\Trait_ $node) {
+        return 'trait ' . $node->name
+        . ' {' . $this->pStmts($node->stmts) . "\n" . '}';
+    }
+
+    protected function pClassCommon(\PhpParser\Node\Stmt\Class_ $node, $afterClassToken) {
+        return $this->pModifiers($node->type)
+        . 'class' . $afterClassToken
+        . (null !== $node->extends ? ' extends ' . $this->p($node->extends) : '')
+        . (!empty($node->implements) ? ' implements ' . $this->pCommaSeparated($node->implements) : '')
+        . ' {' . $this->pStmts($node->stmts) . "\n" . '}';
+    }
+
+    public function pStmt_ClassMethod(\PhpParser\Node\Stmt\ClassMethod $node) {
+        return $this->pModifiers($node->type)
+        . 'function ' . ($node->byRef ? '&' : '') . $node->name
+        . '(' . $this->pCommaSeparated($node->params) . ')'
+        . (null !== $node->returnType ? ' : ' . $this->pType($node->returnType) : '')
+        . (null !== $node->stmts
+            ? ' {' . $this->pStmts($node->stmts) . "\n" . '}'
+            : ';');
+    }
+
+    public function pExpr_Array(\PhpParser\Node\Expr\Array_ $node) {
+        $syntax = $node->getAttribute('kind',
+            $this->options['shortArraySyntax'] ? Expr\Array_::KIND_SHORT : Expr\Array_::KIND_LONG);
+        $items = $node->items ? "\n    " . $this->pImplode($node->items, ",\n    ") . "\n" : '';
+        if ($syntax === Expr\Array_::KIND_SHORT) {
+            return '[' . $items . ']';
+        } else {
+            return 'array(' . $items . ')';
+        }
+    }
+
+    protected function escapeString($string, $quote) {
+        return addcslashes($string, "\r\f\v$" . $quote . "\\");
+    }
+}
+
+function main(array $argv) {
+    $input = file_get_contents(isset($argv[1]) ? $argv[1] : 'php://stdin');
+
+    $parser  = new \PhpParser\Parser\Php7(new \PhpParser\Lexer());
+    $printer = new PrettyPrinter();
+    echo $printer->prettyPrintFile($parser->parse($input));
+}
+
+main($_SERVER['argv']);
+
+
