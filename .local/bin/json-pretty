@@ -8,7 +8,7 @@ function json_check_error() {
     }
 }
 
-$json = file_get_contents($argv[1]) ?? 'php://stdin');
+$json = file_get_contents($argv[1] ?? 'php://stdin');
 $json = json_decode($json, true);
 json_check_error();
 $json = json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION);
