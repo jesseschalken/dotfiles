@@ -11,8 +11,8 @@
 	ci = commit -v
 	co = checkout
 	df = diff -w
-	ds = diff -w --stat
-	dw = diff -w --color-words
+	ds = diff --stat
+	dw = diff --color-words
 	lg = log --full-history
 	ls = ls-files
 	st = status
@@ -42,9 +42,9 @@
 [color "diff"]
 	frag       = bold blue reverse
 	meta       = bold black
-	new        = bold green normal
+	new        = bold green reverse
 	func       = bold white reverse
-	old        = bold red normal
+	old        = bold red reverse
 	whitespace = bold red reverse
 	plain      = normal
 [color "status"]
@@ -74,7 +74,7 @@
 [format]
 	pretty = format:%C(blue bold)%>(20)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(12)%ad%Creset %C(normal)%s%Creset%C(magenta bold)%d%Creset
 [diff]
-	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|\\S
+	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|.
 	renames = copies
 	renameLimit = 50000
 [gui]
