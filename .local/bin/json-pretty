@@ -1,6 +1,10 @@
 #!/usr/bin/php
 <?php
 
+ini_set('memory_limit', '-1');
+gc_disable();
+set_time_limit(0);
+
 function json_check_error() {
     if (json_last_error() != JSON_ERROR_NONE) {
         fwrite(STDERR, json_last_error_msg() . "\n");
