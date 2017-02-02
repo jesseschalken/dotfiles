@@ -81,7 +81,7 @@ set nowrapscan
 set number
 set ruler
 set shell=bash
-set shiftwidth=4
+set shiftwidth=2
 set showcmd
 set showmatch
 set showmode
@@ -90,7 +90,7 @@ set smartindent
 set smarttab
 set softtabstop=0
 set spelllang=en_au,en
-set tabstop=4
+set tabstop=2
 set tags=./tags;/
 set textwidth=78
 set ttyfast
