@@ -19,6 +19,7 @@ then
 	export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 fi
 
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/man:$MANPATH"
 
