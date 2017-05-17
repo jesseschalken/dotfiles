@@ -1,38 +1,23 @@
-#!/usr/bin/env php
+#!/usr/bin/php
 <?php 
 
-namespace TreeSize;
-
-function get_dev($path) {
-    $stat = lstat($path);
-    return $stat['dev'];
-}
-
-function is_dir($path) {
-    return filetype($path) === 'dir';
-}
-
 function do_scan($dir, $dev) {
-    $total = 1;
+  $total = 1;
 
-    if (is_dir($dir)) {
-        if (get_dev($dir) == $dev) {
-            foreach (\scandir($dir) as $file) {
-                if ($file !== '.' && $file !== '..') {
-                    $path = \substr($dir, -1) === '/' ? "$dir$file" : "$dir/$file";
-                    $total += do_scan($path, $dev);
-                }
-            }
-        }
-
-        print "$total\t$dir\n";
+  if (\filetype($dir) === 'dir' && \lstat($dir)['dev'] == $dev) {
+    foreach (\scandir($dir) as $file) {
+      if ($file !== '.' && $file !== '..') {
+        $total += do_scan($dir . \DIRECTORY_SEPARATOR . $file, $dev);
+      }
     }
 
-    return $total;
+    print "$total\t$dir\n";
+  }
+
+  return $total;
 };
 
-\array_shift($argv);
-foreach ($argv as $arg) {
-    do_scan($arg, get_dev($arg));
+foreach (\array_slice($argv, 1) as $arg) {
+  do_scan($arg, \lstat($arg)['dev']);
 }
 
