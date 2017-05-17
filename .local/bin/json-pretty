@@ -5,17 +5,20 @@ ini_set('memory_limit', '-1');
 gc_disable();
 set_time_limit(0);
 
-function json_check_error() {
-    if (json_last_error() != JSON_ERROR_NONE) {
-        fwrite(STDERR, json_last_error_msg() . "\n");
-        exit(1);
-    }
+function json_check_error($file) {
+  if (json_last_error() != JSON_ERROR_NONE) {
+    fwrite(STDERR, "Error in $file: " . json_last_error_msg() . "\n");
+    exit(1);
+  }
 }
 
-$json = file_get_contents($argv[1] ?? 'php://stdin');
-$json = json_decode($json, true);
-json_check_error();
-$json = json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION);
-json_check_error();
-print $json;
+$files = \array_slice($argv, 1) ?? ['php://stdin'];
+foreach ($files as $file) {
+  $json = file_get_contents($file);
+  $json = json_decode($json, true);
+  json_check_error($file);
+  $json = json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION);
+  json_check_error($file);
+  print $json . "\n";
+}
 
