@@ -3,23 +3,23 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 set nocompatible
 filetype off
 
-call vundle#begin()
+call plug#begin("~/.vim/plugged")
 
-Plugin 'gmarik/Vundle.vim' " Vundle itself
-Plugin 'kchmck/vim-coffee-script' " CoffeeScript support
-Plugin 'matchit.zip' " % matching for more languages
-Plugin 'juvenn/mustache' " Mustache template support
-Plugin 'autohotkey-ahk' " AutoHotkey script support
-Plugin 'ervandew/supertab' " Use <Tab> for completion
-Plugin 'jesseschalken/list-text-object' " More text objects 
-Plugin 'tpope/vim-fugitive' " Git support
-Plugin 'tomtom/tcomment_vim' " Use 'gc' to comment/uncomment
-Plugin 'tomasr/molokai' " Molokai color scheme
-Plugin 'leafgarland/typescript-vim' " TypeScript support
-Plugin 'dag/vim-fish' " Fish shell script support
-Plugin 'hhvm/vim-hack' " Hack lang support
+" Plugin 'gmarik/Vundle.vim' " Vundle itself
+Plug 'kchmck/vim-coffee-script' " CoffeeScript support
+" Plug 'matchit.zip' " % matching for more languages
+Plug 'juvenn/mustache' " Mustache template support
+" Plug 'autohotkey-ahk' " AutoHotkey script support
+Plug 'ervandew/supertab' " Use <Tab> for completion
+Plug 'jesseschalken/list-text-object' " More text objects 
+Plug 'tpope/vim-fugitive' " Git support
+Plug 'tomtom/tcomment_vim' " Use 'gc' to comment/uncomment
+Plug 'tomasr/molokai' " Molokai color scheme
+Plug 'leafgarland/typescript-vim' " TypeScript support
+Plug 'dag/vim-fish' " Fish shell script support
+Plug 'hhvm/vim-hack' " Hack lang support
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 syntax on
