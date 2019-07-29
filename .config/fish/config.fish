@@ -41,7 +41,7 @@ end
 
 function fish_right_prompt
     set_color 555
-    echo -s -n $USER '@' (hostname -s)
+    echo -s -n $USER '@' (hostname)
     set_color normal
 end
 
