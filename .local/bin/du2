@@ -1,4 +1,4 @@
 #!/bin/sh
 
-du -ax --si "$@" | sort -rh | less
+du -axh "$@" | sort -rh | less
 
