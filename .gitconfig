@@ -6,8 +6,11 @@
 	editor = vim
 	autocrlf = input
 	filemode = false
+	fsmonitor = true
+	untrackedcache = true
 [push]
 	default = simple
+	autoSetupRemote = true
 [alias]
 	br = -p branch -vva
 	ci = commit -v
@@ -23,9 +26,9 @@
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs -r git branch -d
 	derp = merge --abort
 	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:black bold)%(committerdate:relative) %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/
-	unadd = reset HEAD --
 	unchange = checkout HEAD --
 	merge-log = "!git log \"$1^..$1\""
+	unadd = reset HEAD --
 [color]
 	branch      = true
 	diff        = true
@@ -53,6 +56,8 @@
 	header    = bold black
 	branch    = bold blue reverse
 	nobranch  = bold red reverse
+	localBranch = bold blue reverse
+	remoteBranch = bold green
 	added     = bold green
 	updated   = bold green
 	changed   = bold yellow
@@ -75,7 +80,7 @@
 	date         = short
 	follow = true
 [format]
-	pretty = format:%C(blue bold)%>(20)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(12)%ad%Creset %C(normal)%s%Creset%C(magenta bold)%d%Creset
+	pretty = format:%C(blue bold)%>(30)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(12)%ad%Creset%C(normal)%s%Creset%C(magenta bold)%d%Creset
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|.
 	renames = copies
@@ -93,3 +98,20 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[status]
+	short = true
+	showStash = true
+	submoduleSummary = true
+	branch = true
+	aheadBehind = true
+	showUntrackedFiles = normal
+[pager]
+	status = true
+[protocol]
+	version = 2
+[maintenance "prefetch"]
+	enabled = false
+[rebase]
+	instructionFormat = (%an <%ae>) %s
+[pull]
+	rebase = false
