@@ -40,9 +40,9 @@ function fish_prompt
 end
 
 function fish_right_prompt
-    set_color 555
-    echo -s -n $USER '@' (hostname)
-    set_color normal
+  # set_color 555
+  # echo -s -n $USER '@' (hostname)
+  # set_color normal
 end
 
 alias time="time -p"
