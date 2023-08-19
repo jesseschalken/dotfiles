@@ -17,6 +17,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/man:$MANPATH"
 
+export SHELL="$(which fish)"
 
 export GIT_MERGE_AUTOEDIT='no'
 
