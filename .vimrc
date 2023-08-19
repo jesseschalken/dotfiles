@@ -42,37 +42,38 @@ noremap <space> za
 noremap j gj
 noremap k gk
 
+set autochdir
 set autoindent
 set autoread
 set autowrite
 set backspace=indent,eol,start
 set cinoptions=(0,u0,U0,+0,j1,J1
 set encoding=utf-8
+set expandtab
 set fileformats=unix,dos
 set foldexpr=min([8,(getline(v:lnum)=~'^\\s*$'?max([indent(v:lnum-1),indent(v:lnum+1)]):indent(v:lnum))/&sw])
 set foldlevelstart=99
 set foldmethod=syntax
 set formatoptions=roq
 set grepprg=grep\ -nH\ $*
-set guioptions=gia
+set guioptions=giar
 set hidden
 set hlsearch
+set ignorecase
 set incsearch
 set indentexpr=
 set laststatus=2
 set lazyredraw
 set linebreak
 set listchars=tab:»\ ,trail:·,extends:→,precedes:←
+set modelines=4
 set more
 set mouse=a
 set mousefocus
 set mousemodel=extend
-set autochdir
 set nocindent
 set nocul
 set noequalalways
-set expandtab
-set ignorecase
 set nolist
 set nonumber
 set nosmartcase
@@ -108,7 +109,7 @@ autocmd GUIEnter * set visualbell t_vb=
 if has('win32') || has('win64')
     set guifont=Consolas:h10
 elseif has('mac')
-    set guifont=Menlo:h12
+    set guifont=Menlo:h10
     set guioptions+=e
 else
     set guifont=Monospace\ 10
