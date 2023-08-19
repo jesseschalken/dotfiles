@@ -17,9 +17,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/man:$MANPATH"
 
-if command -v dircolors > /dev/null 2>&1
-then
-    eval "$(dircolors -b)"
-fi
 
 
+command -v dircolors >/dev/null && eval "$(dircolors -b)"
+command -v gdircolors >/dev/null && eval "$(gdircolors -b)"
