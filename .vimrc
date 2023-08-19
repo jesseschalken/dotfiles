@@ -114,3 +114,7 @@ else
 endif
 
 set t_Co=256
+
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+
