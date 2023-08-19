@@ -4,6 +4,7 @@
 !/.vim
 
 /.local/share
+/.local/state
 
 /.config/*
 
