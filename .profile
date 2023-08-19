@@ -8,7 +8,7 @@ fi
 
 export EDITOR='vim'
 export CLICOLOR='1'
-export LESS='~RSx4'
+export LESS='~FSRx4'
 export PAGER='less'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true'
 export LSCOLORS='ExFxCxDxBxegedabagacad'
