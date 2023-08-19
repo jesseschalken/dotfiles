@@ -18,6 +18,7 @@ Plug 'tomasr/molokai' " Molokai color scheme
 Plug 'leafgarland/typescript-vim' " TypeScript support
 Plug 'dag/vim-fish' " Fish shell script support
 Plug 'hhvm/vim-hack' " Hack lang support
+Plug 'LnL7/vim-nix' " Nix file support
 
 call plug#end()
 
