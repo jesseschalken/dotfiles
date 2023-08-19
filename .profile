@@ -18,6 +18,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/man:$MANPATH"
 
 
+export GIT_MERGE_AUTOEDIT='no'
 
 command -v dircolors >/dev/null && eval "$(dircolors -b)"
 command -v gdircolors >/dev/null && eval "$(gdircolors -b)"
