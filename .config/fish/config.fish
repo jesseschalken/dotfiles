@@ -25,7 +25,7 @@ set fish_pager_color_progress cyan --bold
 
 function fish_prompt
     set_color -b ccc 000
-    echo -n $PWD | perl -p -e "s|^$HOME|~|"
+    echo -n $PWD | sed -e "s|^$HOME|~|"
     set_color -b normal normal
     echo -n ' '
     switch $USER
