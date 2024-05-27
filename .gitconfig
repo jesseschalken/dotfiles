@@ -77,10 +77,10 @@
 [log]
 	abbrevCommit = true
 	decorate     = short
-	date         = short
+	date         = iso-local
 	follow = true
 [format]
-	pretty = format:%C(blue bold)%>(30)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(12)%ad%Creset%C(normal)%s%Creset%C(magenta bold)%d%Creset
+	pretty = format:%C(blue bold)%>(30)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(27)%ad%Creset%C(normal)%s%Creset%C(magenta bold)%d%Creset
 [diff]
 	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|.
 	renames = copies
