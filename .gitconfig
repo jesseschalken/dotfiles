@@ -8,11 +8,12 @@
 	filemode = false
 	fsmonitor = true
 	untrackedcache = true
+	pager = less -+X -~FSRx4 --mouse
 [push]
 	default = simple
 	autoSetupRemote = true
 [alias]
-	br = -p branch -vva
+	br = -p branch -vv
 	ci = commit -v
 	co = checkout
 	df = diff -w
@@ -25,10 +26,10 @@
 	rawlog = "log --pretty=raw --decorate --graph"
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs -r git branch -d
 	derp = merge --abort
-	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:green bold)%(objectname:short)  %(color:black bold)%(committerdate:relative) %(color:reset)%(HEAD) %(refname:short)  %(color:blue bold)%(committername)\" refs/heads/
+	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:brightgreen)%(objectname:short)  %(color:reverse)%(committerdate:relative) %(color:reset)%(HEAD) %(refname:short)  %(color:brightblue)%(committername)\" refs/heads/
 	unchange = checkout HEAD --
 	merge-log = "!git log \"$1^..$1\""
-	unadd = reset HEAD --
+	unadd = restore --staged --
 [color]
 	branch      = true
 	diff        = true
@@ -39,30 +40,31 @@
 [i18n]
 	filesEncoding = utf-8
 [color "branch"]
-	current  = bold blue reverse
-	local    = bold blue
-	remote   = bold green
-	upstream = bold green
-	nobranch = bold red reverse
+	current  = brightblue reverse
+	local    = brightblue
+	remote   = brightgreen
+	upstream = brightgreen
+	nobranch = brightred reverse
 [color "diff"]
-	frag       = bold blue reverse
-	meta       = bold black
-	new        = bold green reverse
-	func       = bold white reverse
-	old        = bold red reverse
-	whitespace = bold red reverse
+	frag       = brightblue reverse
+	meta       = brightblack
+	frag       = brightblue reverse
+	new        = brightgreen reverse
+	func       = brightwhite reverse
+	old        = brightred reverse
+	whitespace = brightred reverse
 	plain      = normal
 [color "status"]
-	header    = bold black
-	branch    = bold blue reverse
-	nobranch  = bold red reverse
-	localBranch = bold blue reverse
-	remoteBranch = bold green
-	added     = bold green
-	updated   = bold green
-	changed   = bold yellow
-	unmerged  = bold red
-	untracked = bold red
+	header    = brightblack
+	branch    = brightblue reverse
+	nobranch  = brightred reverse
+	localBranch = brightblue reverse
+	remoteBranch = brightgreen reverse
+	added     = brightgreen
+	updated   = brightgreen
+	changed   = brightyellow
+	unmerged  = brightred
+	untracked = brightred
 [color "decorate"]
 	branch       = bold blue
 	remoteBranch = bold green
@@ -70,7 +72,7 @@
 	stash        = bold cyan
 	HEAD         = bold blue reverse
 [merge]
-	conflictstyle = diff3
+	conflictStyle = zdiff3
 	renameLimit = 50000
 [mergetool]
 	keepBackup = false
@@ -80,17 +82,13 @@
 	date         = iso-local
 	follow = true
 [format]
-	pretty = format:%C(blue bold)%>(30)%an %Creset%C(green bold)%><(9)%h%Creset%C(bold black)%><(27)%ad%Creset%C(normal)%s%Creset%C(magenta bold)%d%Creset
+	pretty = format:%C(brightblue)%>(30)%an %Creset%C(brightgreen)%><(9)%h%Creset%C(brightblack)%><(28)%ad%Creset%C(normal)%s%Creset%C(brightmagenta)%d%Creset
 [diff]
-	wordRegex = [A-Z]?[a-z]+|[0-9]+|[A-Za-z]+|.
+	wordRegex = [-A-Za-z0-9]+|.
 	renames = copies
 	renameLimit = 50000
 [gui]
 	diffcontext = 10
-[gc]
-	pruneexpire = now
-[credential]
-	helper = store
 [fetch]
 	prune = true
 	pruneTags = true
@@ -110,9 +108,17 @@
 	status = true
 [protocol]
 	version = 2
-[maintenance "prefetch"]
-	enabled = false
 [rebase]
 	instructionFormat = (%an <%ae>) %s
-[pull]
-	rebase = false
+	autoStash = true
+[init]
+	defaultBranch = main
+[index]
+	skipHash = false
+[clean]
+	requireForce = false
+[branch]
+	sort = -committerdate
+	autoSetupMerge = simple
+[feature]
+	manyFiles = true
