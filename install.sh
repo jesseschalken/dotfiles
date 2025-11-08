@@ -2,5 +2,5 @@
 
 set -eu -o pipefail
 
-stow . -t ~
+stow --adopt . -t ~
 
