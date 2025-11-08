@@ -26,7 +26,6 @@
 	rawlog = "log --pretty=raw --decorate --graph"
 	delete-merged-branches = !git branch --merged | grep -v \"\\*\" | xargs -r git branch -d
 	derp = merge --abort
-	recent = -p for-each-ref --sort=-committerdate --format=\"%(color:brightgreen)%(objectname:short)  %(color:reverse)%(committerdate:relative) %(color:reset)%(HEAD) %(refname:short)  %(color:brightblue)%(committername)\" refs/heads/
 	unchange = checkout HEAD --
 	merge-log = "!git log \"$1^..$1\""
 	unadd = restore --staged --
@@ -39,38 +38,6 @@
 	ui          = true
 [i18n]
 	filesEncoding = utf-8
-[color "branch"]
-	current  = brightblue reverse
-	local    = brightblue
-	remote   = brightgreen
-	upstream = brightgreen
-	nobranch = brightred reverse
-[color "diff"]
-	frag       = brightblue reverse
-	meta       = brightblack
-	frag       = brightblue reverse
-	new        = brightgreen reverse
-	func       = brightwhite reverse
-	old        = brightred reverse
-	whitespace = brightred reverse
-	plain      = normal
-[color "status"]
-	header    = brightblack
-	branch    = brightblue reverse
-	nobranch  = brightred reverse
-	localBranch = brightblue reverse
-	remoteBranch = brightgreen reverse
-	added     = brightgreen
-	updated   = brightgreen
-	changed   = brightyellow
-	unmerged  = brightred
-	untracked = brightred
-[color "decorate"]
-	branch       = bold blue
-	remoteBranch = bold green
-	tag          = bold green
-	stash        = bold cyan
-	HEAD         = bold blue reverse
 [merge]
 	conflictStyle = zdiff3
 	renameLimit = 50000
