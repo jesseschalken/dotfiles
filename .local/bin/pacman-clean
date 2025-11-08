@@ -1,2 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -eu
+
 pacman -R --recursive `pacman -Qq --unrequired --deps`

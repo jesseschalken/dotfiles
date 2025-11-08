@@ -4,19 +4,22 @@
 function dump($parent, $name, $p1 = "", $p2 = "") {
     $path = $parent === null ? $name : $parent . DIRECTORY_SEPARATOR . $name;
 
-    if (filetype($path) === 'dir')
+    if (filetype($path) === 'dir') {
         $children = array_values(array_diff(scandir($path), ['.', '..']));
-    else
+    } else {
         $children = [];
+    }
 
-    if ($children && $parent !== null)
-        $s = '┐';
-    else if ($children)
+    if ($children && $parent !== null) {
+        $s = '╮';
+    } else if ($children) {
         $s = '╷';
-    else if ($parent !== null)
+    } else if ($parent !== null) {
         $s = '╴';
-    else
+    } else {
         $s = '·';
+    }
+
     echo "$p1$s $name\n";
 
     $last = count($children) - 1;
@@ -30,6 +33,7 @@ function dump($parent, $name, $p1 = "", $p2 = "") {
     }
 }
 
-foreach (array_slice($argv, 1) ?: ['.'] as $p)
+foreach (array_slice($argv, 1) ?: ['.'] as $p) {
     dump(null, $p);
+}
 

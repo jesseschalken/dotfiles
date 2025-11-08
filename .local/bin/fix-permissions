@@ -1,7 +1,7 @@
-#!/usr/bin/php
+#!/usr/bin/env php
 <?php
 
-$umask = umask();
+$umask = 0022;
 
 function fix_permissions($path) {
     global $umask;
@@ -18,7 +18,12 @@ function fix_permissions($path) {
         $top = file_get_contents($path, false, null, 0, 10);
         if (
             substr($top, 0, 2) === '#!' ||
-            substr($top, 0, 4) === "\x7fELF"
+            substr($top, 0, 4) === "\x7fELF" ||
+            substr($top, 0, 4) === "\xfe\xed\xfa\xce" ||
+            substr($top, 0, 4) === "\xfe\xed\xfa\xcf" ||
+            substr($top, 0, 4) === "\xca\xfe\xba\xbe" ||
+            substr($top, 0, 2) === "MZ" ||
+            substr($top, 0, 4) === "PE\x00\x00"
         ) {
             $exec = true;
         }
