@@ -8,7 +8,7 @@
 	filemode = false
 	fsmonitor = true
 	untrackedcache = true
-	pager = less -+X -~FSRx4 --mouse
+	pager = less -+X -~FSRx4
 [push]
 	default = simple
 	autoSetupRemote = true
