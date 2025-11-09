@@ -1,39 +1,30 @@
-#!/usr/bin/env php
-<?php
+#!/usr/bin/env python3
+import os
+import stat
+import sys
 
-function dump($parent, $name, $p1 = "", $p2 = "") {
-    $path = $parent === null ? $name : $parent . DIRECTORY_SEPARATOR . $name;
 
-    if (filetype($path) === 'dir') {
-        $children = array_values(array_diff(scandir($path), ['.', '..']));
-    } else {
-        $children = [];
-    }
+def dump(parent: str | None, name: str, p1: str = "", p2: str = "") -> None:
+    path = name if parent is None else os.path.join(parent, name)
 
-    if ($children && $parent !== null) {
-        $s = '╮';
-    } else if ($children) {
-        $s = '╷';
-    } else if ($parent !== null) {
-        $s = '╴';
-    } else {
-        $s = '·';
-    }
+    if stat.S_ISDIR(os.lstat(path).st_mode):
+        children = sorted(os.listdir(path))
+    else:
+        children = []
 
-    echo "$p1$s $name\n";
+    if parent is None:
+        prefix = "╷" if children else "•"
+    else:
+        prefix = "╮" if children else "╴"
 
-    $last = count($children) - 1;
-    foreach ($children as $k => $child) {
-        dump(
-            $path,
-            $child,
-            $p2 . ($k == $last ? '╰─' : '├─'),
-            $p2 . ($k == $last ? '  ' : '│ ')
-        );
-    }
-}
+    print(f"{p1}{prefix} {name}")
 
-foreach (array_slice($argv, 1) ?: ['.'] as $p) {
-    dump(null, $p);
-}
+    if children:
+        last = children.pop()
+        for child in children:
+            dump(path, child, p2 + "├─", p2 + "│ ")
+        dump(path, last, p2 + "╰─", p2 + "  ")
 
+
+for p in sys.argv[1:] or ["."]:
+    dump(None, p)
