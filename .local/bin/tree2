@@ -6,18 +6,21 @@ import sys
 
 def dump(parent: str | None, name: str, p1: str = "", p2: str = "") -> None:
     path = name if parent is None else os.path.join(parent, name)
+    target = None
+    children = None
 
-    if stat.S_ISDIR(os.lstat(path).st_mode):
+    stat_result = os.lstat(path).st_mode
+    if stat.S_ISDIR(stat_result):
         children = sorted(os.listdir(path))
-    else:
-        children = []
+    elif stat.S_ISLNK(stat_result):
+        target = os.readlink(path)
 
     if parent is None:
         prefix = "╷" if children else "•"
     else:
         prefix = "╮" if children else "╴"
 
-    print(f"{p1}{prefix} {name}")
+    print(f"{p1}{prefix} {name}" + (f" → {target}" if target is not None else ""))
 
     if children:
         last = children.pop()
