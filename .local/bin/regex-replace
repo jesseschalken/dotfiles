@@ -1,40 +1,29 @@
-#!/usr/bin/env php
-<?php
+#!/usr/bin/env python3
 
-$errors = array(
-    PREG_INTERNAL_ERROR        => 'there was an internal PCRE error',
-    PREG_BACKTRACK_LIMIT_ERROR => 'pcre.backtrack_limit excausted',
-    PREG_RECURSION_LIMIT_ERROR => 'pcre.recursion_limit excausted',
-    PREG_BAD_UTF8_ERROR        => 'malformed UTF-8 data',
-    PREG_BAD_UTF8_OFFSET_ERROR => 'offset didn\'t correspond to the beginning of a valid UTF-8 code point',
-);
+import sys
+import re
 
-$clear = "\r\x1B[2K";
+CLEAR = "\r\x1b[2K"
 
-ini_set('pcre.backtrack_limit', "90000000");
-ini_set('pcre.recursion_limit', "90000000");
+regex = input("regex:\n")
+replace = input("replacement:\n")
+pattern = re.compile(regex, re.DOTALL)
 
-$regex   = readline("regex:\n");
-$replace = readline("replacement:\n");
+files = sys.argv[1:]
+count = len(files)
 
-// Insert a "\" before each "#" preceded by an even number of "\"s
-$regex = "#" . preg_replace('#(?<!\\\\)((\\\\\\\\)*)(\#)#S', '$1\\\\$3', $regex) . "#sS";
-$files = array_slice($argv, 1);
-$count = count($files);
+num = 0
+for i, path in enumerate(files):
+    print(f"{CLEAR}{i}/{count}: {path}", end="", flush=True)
 
-$num = 0;
-foreach ($files as $i => $file) {
-    print "$clear$i/$count: $file";
-    $contents = file_get_contents($file);
-    $contents = preg_replace($regex, $replace, $contents, -1, $num_);
-    $num += $num_;
+    with open(path, "r", encoding="utf-8") as fh:
+        contents = fh.read()
 
-    $error = preg_last_error();
-    if ($error !== PREG_NO_ERROR)
-        print "$clear$file: {$errors[$error]}\n";
-    else
-        file_put_contents($file, $contents);
-}
+    new_contents, num_ = pattern.subn(replace, contents)
+    num += num_
 
-print "$clear$num replacements accross $count files\n";
+    if contents != new_contents:
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(new_contents)
 
+print(f"{CLEAR}{num} replacements across {count} files")
