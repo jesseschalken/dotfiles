@@ -1,46 +1,45 @@
-#!/usr/bin/env php
-<?php
+#!/usr/bin/env python3
+import os
+import stat
+import sys
 
-$umask = 0022;
+UMASK = 0o022
 
-function fix_permissions($path) {
-    global $umask;
 
-    $type = filetype($path);
-    $exec = false;
+def fix_permissions(path: str):
+    mode = os.lstat(path).st_mode
+    exec = False
 
-    if ($type === 'dir') {
-        foreach (array_diff(scandir($path), ['.', '..']) as $p) {
-            fix_permissions($path . DIRECTORY_SEPARATOR . $p);
-        }
-        $exec = true;
-    } else if ($type === 'file') {
-        $top = file_get_contents($path, false, null, 0, 10);
-        if (
-            substr($top, 0, 2) === '#!' ||
-            substr($top, 0, 4) === "\x7fELF" ||
-            substr($top, 0, 4) === "\xfe\xed\xfa\xce" ||
-            substr($top, 0, 4) === "\xfe\xed\xfa\xcf" ||
-            substr($top, 0, 4) === "\xca\xfe\xba\xbe" ||
-            substr($top, 0, 2) === "MZ" ||
-            substr($top, 0, 4) === "PE\x00\x00"
-        ) {
-            $exec = true;
-        }
-    } else if ($type === 'link') {
-        return;
-    }
+    if stat.S_ISDIR(mode):
+        for entry in os.listdir(path):
+            fix_permissions(os.path.join(path, entry))
+        exec = True
+    elif stat.S_ISREG(mode):
+        with open(path, "rb") as f:
+            head = f.read(10)
+        exec = any(
+            head.startswith(m)
+            for m in [
+                b"#!",
+                b"\x7fELF",
+                b"\xfe\xed\xfa\xce",
+                b"\xfe\xed\xfa\xcf",
+                b"\xca\xfe\xba\xbe",
+                b"MZ",
+                b"PE\x00\x00",
+            ]
+        )
+    elif stat.S_ISLNK(mode):
+        return
 
-    $new = ~$umask & ($exec ? 0777 : 0666);
-    $old = fileperms($path) & 0777;
+    mask = 0o777 if exec else 0o666
+    new = (~UMASK) & mask
+    old = mode & 0o777
 
-    if ($old !== $new) {
-        print decoct($old) . ' => ' . decoct($new) . "  $path\n";
-        chmod($path, $new);
-    }
-}
+    if old != new:
+        print(f"{oct(old)} => {oct(new)}  {path}")
+        os.chmod(path, new)
 
-foreach (array_slice($argv, 1) as $path) {
-    fix_permissions($path);
-}
 
+for p in sys.argv[1:]:
+    fix_permissions(p)
