@@ -1,23 +1,18 @@
-#!/usr/bin/env php
-<?php 
+#!/usr/bin/env python3
+import os
+import stat
+import sys
 
-function do_scan($dir, $dev) {
-  $total = 1;
 
-  if (\filetype($dir) === 'dir' && \lstat($dir)['dev'] == $dev) {
-    foreach (\scandir($dir) as $file) {
-      if ($file !== '.' && $file !== '..') {
-        $total += do_scan($dir . \DIRECTORY_SEPARATOR . $file, $dev);
-      }
-    }
+def do_scan(path, dev):
+    total = 1
+    st = os.lstat(path)
+    if stat.S_ISDIR(st.st_mode) and st.st_dev == dev:
+        for entry in os.listdir(path):
+            total += do_scan(os.path.join(path, entry), dev)
+        print(f"{total}\t{path}")
+    return total
 
-    print "$total\t$dir\n";
-  }
 
-  return $total;
-};
-
-foreach (\array_slice($argv, 1) as $arg) {
-  do_scan($arg, \lstat($arg)['dev']);
-}
-
+for arg in sys.argv[1:]:
+    do_scan(arg, os.lstat(arg).st_dev)
