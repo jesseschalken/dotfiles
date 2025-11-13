@@ -1,3 +1,5 @@
+#!/bin/sh
+
 export EDITOR='nvim'
 export CLICOLOR='1'
 export LESS='-+X -~FSRx4'
