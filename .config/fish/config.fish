@@ -3,6 +3,7 @@ if status --is-login
 end
 
 set -g async_prompt_functions _pure_prompt_git
+set pure_enable_single_line_prompt true
 
 alias bell="echo -ne '\a'"
 
