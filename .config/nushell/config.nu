@@ -17,6 +17,10 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
-$env.config.show_banner = false
+$env.config.buffer_editor = "nvim"
 
-source $"($nu.home-path)/.cargo/env.nu"
+# Don't do this because it doesn't work on Window because the file doesn't
+# exist, but ~/.cargo/bin is already on the PATH anyway, and on macOS/Linux I
+# don't use nushell as the primary shell.
+# source $"($nu.home-path)/.cargo/env.nu"
+
