@@ -76,6 +76,7 @@ set grepprg=grep\ -nH\ $*
 set hidden
 set hlsearch
 set ignorecase
+set t_ut= " Fixes background colors in VS Code terminal
 set incsearch
 set indentexpr=
 set laststatus=2
