@@ -124,13 +124,7 @@ set wrap
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-if has('win32') || has('win64')
-    set guifont=Consolas:h11
-elseif has('mac')
-    set guifont=Menlo:h11
-else
-    set guifont=Monospace\ 11
-endif
+set guifont=Iosevka:h14
 
 set t_Co=256
 
