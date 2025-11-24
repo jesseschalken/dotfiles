@@ -15,6 +15,7 @@ Plug 'juvenn/mustache' " Mustache template support
 " Plug 'vim-airline/vim-airline'
 Plug 'ayu-theme/ayu-vim'
 Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
+Plug 'sindrets/diffview.nvim'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' } " Captppucin color scheme
 Plug 'ervandew/supertab' " Use <Tab> for completion
 Plug 'itchyny/lightline.vim'
