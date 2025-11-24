@@ -65,12 +65,12 @@
 	process = git-lfs filter-process
 	required = true
 [status]
-	short = true
+	short = false
 	showStash = true
 	submoduleSummary = true
 	branch = true
 	aheadBehind = true
-	showUntrackedFiles = normal
+	showUntrackedFiles = no
 [pager]
 	status = true
 [protocol]
