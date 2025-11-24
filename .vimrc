@@ -109,6 +109,7 @@ set smarttab
 set softtabstop=0
 set spelllang=en_au,en
 set tabstop=2
+set cursorline
 set ttimeout
 set ttimeoutlen=50
 set tags=./tags;/
