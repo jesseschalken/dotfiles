@@ -7,7 +7,10 @@ bindings = [
 ]
 
 [font]
-size = 11
+size = 14
+normal.family = "Iosevka"
+# For some reason this is needed with Iosevka
+normal.style = "Regular"
 
 [window]
 padding.x = 6
