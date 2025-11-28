@@ -21,32 +21,29 @@ background = '#00FF80'
 text = '#004020'
 
 
+[colors]
+draw_bold_text_with_bright_colors = true
 
-# Colours (Monokai Charcoal)
-
-# Default Colours
+[colors.normal]
+red = '#ff0074'
+yellow = '#ff8400'
+green = '#2dee00'
+cyan = '#00feff'
+blue = '#00b3ff'
+magenta = '#ff4cff'
+black = '#151515'
+white = '#bdbdbd'
+[colors.bright]
+red = '#ff1900'
+yellow = '#ecc400'
+green = '#00ff84'
+cyan = '#00e1ff'
+blue = '#bc7fff'
+magenta = '#ff00f7'
+black = '#474747'
+white = '#fefefe'
 [colors.primary]
 background = '#000000'
-foreground = '#FFFFFF'
-
-# Normal Colours
-[colors.normal]
-black   = '#1a1a1a'
-red     = '#f4005f'
-green   = '#98e024'
-yellow  = '#fa8419'
-blue    = '#9d65ff'
-magenta = '#f4005f'
-cyan    = '#58d1eb'
-white   = '#c4c5b5'
-
-# Bright Colours
-[colors.bright]
-black   = '#625e4c'
-red     = '#f4005f'
-green   = '#98e024'
-yellow  = '#e0d561'
-blue    = '#9d65ff'
-magenta = '#f4005f'
-cyan    = '#58d1eb'
-white   = '#f6f6ef'
+dim_foreground = '#808080'
+foreground = '#bdbdbd'
+bright_foreground = '#fefefe'
