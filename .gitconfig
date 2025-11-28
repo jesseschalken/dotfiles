@@ -51,7 +51,7 @@
 [format]
 	pretty = format:%C(brightblue)%>(30)%an %Creset%C(brightgreen)%><(9)%h%Creset%C(brightblack)%><(28)%ad%Creset%C(normal)%s%Creset%C(brightmagenta)%d%Creset
 [diff]
-	wordRegex = [-A-Za-z0-9]+|.
+	wordRegex = [-A-Z._a-z0-9]+|.
 	renames = copies
 	renameLimit = 50000
 [gui]
