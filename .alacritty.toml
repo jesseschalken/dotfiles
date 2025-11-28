@@ -8,7 +8,7 @@ bindings = [
 
 [font]
 size = 14
-normal.family = "Iosevka"
+normal.family = "Iosevka Term"
 # For some reason this is needed with Iosevka
 normal.style = "Regular"
 
