@@ -7,21 +7,20 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Callable
 import math
-import sys
 
 
 @dataclass
-class okLab:
+class Lab:
     l: float
     a: float
     b: float
 
-    def to_lch(self) -> okLCh:
+    def to_lch(self) -> LCh:
         c = math.sqrt(self.a * self.a + self.b * self.b)
         h = math.degrees(math.atan2(self.b, self.a)) % 360
-        return okLCh(self.l, c, h)
+        return LCh(self.l, c, h)
 
-    def to_linear_srgb(self) -> sRGB:
+    def to_linear_srgb(self) -> RGB:
         l_ = self.l + 0.3963377774 * self.a + 0.2158037573 * self.b
         m_ = self.l - 0.1055613458 * self.a - 0.0638541728 * self.b
         s_ = self.l - 0.0894841775 * self.a - 1.2914855480 * self.b
@@ -30,7 +29,7 @@ class okLab:
         m = m_**3
         s = s_**3
 
-        return sRGB(
+        return RGB(
             +4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
             -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
             -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s,
@@ -38,30 +37,30 @@ class okLab:
 
 
 @dataclass
-class sRGB:
+class RGB:
     r: float
     g: float
     b: float
 
     def to_hex(self) -> str:
         return "#{0:02x}{1:02x}{2:02x}".format(
-            int(self.r * 255), int(self.g * 255), int(self.b * 255)
+            round(self.r * 255), round(self.g * 255), round(self.b * 255)
         )
 
-    def map(self, func: Callable[[float], float]) -> sRGB:
-        return sRGB(
+    def map(self, func: Callable[[float], float]) -> RGB:
+        return RGB(
             r=func(self.r),
             g=func(self.g),
             b=func(self.b),
         )
 
-    def clamp(self) -> sRGB:
+    def clamp(self) -> RGB:
         return self.map(lambda x: min(max(x, 0.0), 1.0))
 
-    def to_oklch(self) -> okLCh:
+    def to_oklch(self) -> LCh:
         return self.map(srgb_to_linear).linear_to_oklab().to_lch()
 
-    def linear_to_oklab(self) -> okLab:
+    def linear_to_oklab(self) -> Lab:
         l = 0.4122214708 * self.r + 0.5363325363 * self.g + 0.0514459929 * self.b
         m = 0.2119034982 * self.r + 0.6806995451 * self.g + 0.1073969566 * self.b
         s = 0.0883024619 * self.r + 0.2817188376 * self.g + 0.6299787005 * self.b
@@ -70,7 +69,7 @@ class sRGB:
         m_ = math.cbrt(m)
         s_ = math.cbrt(s)
 
-        return okLab(
+        return Lab(
             0.2104542553 * l_ + 0.7936177850 * m_ - 0.0040720468 * s_,
             1.9779984951 * l_ - 2.4285922050 * m_ + 0.4505937099 * s_,
             0.0259040371 * l_ + 0.7827717662 * m_ - 0.8086757660 * s_,
@@ -78,46 +77,53 @@ class sRGB:
 
 
 @dataclass
-class okLCh:
+class LCh:
     l: float
     c: float
     h: float
 
-    def to_oklab(self) -> okLab:
+    def to_oklab(self) -> Lab:
         h_radians = math.radians(self.h)
         a = self.c * math.cos(h_radians)
         b = self.c * math.sin(h_radians)
-        return okLab(self.l, a, b)
+        return Lab(self.l, a, b)
 
-    def to_srgb(self) -> sRGB:
+    def to_srgb(self) -> RGB:
         return self.to_oklab().to_linear_srgb().map(linear_to_srgb).clamp()
 
     def to_srgb_hex(self) -> str:
         rgb = self.to_srgb()
-        lch = rgb.to_oklch()
+        diff = abs(self - rgb.to_oklch())
 
-        if self.c == 0.0:
-            lch = okLCh(lch.l, 0.0, self.h)
-
-        diff = okLCh(
-            abs(self.l - lch.l),
-            abs(self.c - lch.c),
-            abs(self.h - lch.h),
-        )
-
-        if diff.l > MAX_DIFF.l or diff.c > MAX_DIFF.c or diff.h > MAX_DIFF.h:
-            print(
-                f"Color {self} is too far out of sRGB gamut (achieved {lch}, diff {diff}, max diff {MAX_DIFF})",
-                file=sys.stderr,
-            )
+        index = 0
+        while (
+            diff.l > MAX_DIFF.l or diff.c > MAX_DIFF.c or diff.h > MAX_DIFF.h
+        ) and index < 1000:
+            rgb = LCh(self.l, max(0, self.c - index * 0.001), self.h).to_srgb()
+            diff = abs(self - rgb.to_oklch())
+            index += 1
 
         return rgb.to_hex()
 
-    def __add__(self, other: okLCh) -> okLCh:
-        return okLCh(
+    def __add__(self, other: LCh) -> LCh:
+        return LCh(
             self.l + other.l,
             self.c + other.c,
             (self.h + other.h) % 360,
+        )
+
+    def __sub__(self, other: LCh) -> LCh:
+        return LCh(
+            self.l - other.l,
+            self.c - other.c,
+            (self.h - other.h) % 360,
+        )
+
+    def __abs__(self) -> LCh:
+        return LCh(
+            abs(self.l),
+            abs(self.c),
+            min(abs(self.h), abs(self.h - 360)),
         )
 
 
@@ -129,52 +135,66 @@ def srgb_to_linear(x: float) -> float:
     return x / 12.92 if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4
 
 
-MAX_DIFF = okLCh(0.20, 0.30, 20)
-COLOR_BASE = okLCh(0.82, 0.36, 30)
+STEP = 0.25
 
-HUES = {
-    "red": 0,
-    "yellow": 60,
-    "green": 120,
-    "cyan": 180,
-    "blue": 240,
-    "magenta": 300,
+MAX_DIFF = LCh(0.2, 1, 5)
+
+BASE = LCh(1 - STEP, 0, 0)
+COLOR = LCh(0, 0.4, 30)
+
+COLOR_SHADES = {
+    "dim": LCh(-STEP, 0, 0),
+    "normal": LCh(0, 0, -15),
+    "bright": LCh(0, 0, +15),
+}
+
+NEUTRAL_SHADES = {
+    "dim": LCh(-STEP, 0, 0),
+    "normal": LCh(0, 0, 0),
+    "bright": LCh(STEP, 0, 0),
+}
+
+COLORS = {
+    "red": LCh(0, 0, 0),
+    "yellow": LCh(0, 0, 60),
+    "green": LCh(0, 0, 120),
+    "cyan": LCh(0, 0, 180),
+    "blue": LCh(0, 0, 240),
+    "magenta": LCh(0, 0, 300),
 }
 
 NEUTRALS = {
-    "black": (0.2, 0.4),
-    "white": (0.8, 1.0),
+    "black": LCh(-STEP * 2, 0, 0),
+    "white": LCh(0, 0, 0),
 }
 
 PRIMARIES = {
-    "background": 0.0,
-    "dim_foreground": 0.6,
-    "foreground": 0.8,
-    "bright_foreground": 1.0,
+    "background": LCh(0, 0, 0),
+    "dim_foreground": BASE + LCh(-STEP, 0, 0),
+    "foreground": BASE,
+    "bright_foreground": BASE + LCh(STEP, 0, 0),
 }
 
 
 def main():
-    print("[colors.normal]")
+    data: dict[str, dict[str, LCh]] = {}
 
-    for name, h in HUES.items():
-        print(f"{name} = '{(COLOR_BASE + okLCh(0, 0, h - 15)).to_srgb_hex()}'")
+    for shade, delta in COLOR_SHADES.items():
+        for name, lch in COLORS.items():
+            data.setdefault(shade, {})[name] = BASE + delta + lch + COLOR
 
-    for name, (l, _) in NEUTRALS.items():
-        print(f"{name} = '{okLCh(l, 0, 0).to_srgb_hex()}'")
+    for shade, delta in NEUTRAL_SHADES.items():
+        for name, lch in NEUTRALS.items():
+            data.setdefault(shade, {})[name] = BASE + delta + lch
 
-    print("[colors.bright]")
+    for name, lch in PRIMARIES.items():
+        data.setdefault("primary", {})[name] = lch
 
-    for name, h in HUES.items():
-        print(f"{name} = '{(COLOR_BASE + okLCh(0, 0, h + 15)).to_srgb_hex()}'")
-
-    for name, (_, l) in NEUTRALS.items():
-        print(f"{name} = '{okLCh(l, 0, 0).to_srgb_hex()}'")
-
-    print("[colors.primary]")
-
-    for name, l in PRIMARIES.items():
-        print(f"{name} = '{okLCh(l, 0, 0).to_srgb_hex()}'")
+    for shade, colors in data.items():
+        print(f"[colors.{shade}]")
+        for name, lch in colors.items():
+            print(f"{name} = '{lch.to_srgb_hex()}'")
+        print()
 
 
 if __name__ == "__main__":
