@@ -27,38 +27,38 @@ draw_bold_text_with_bright_colors = true
 
 
 [colors.dim]
-red = '#fd0000'
-yellow = '#7e5e00'
-green = '#007d1f'
-cyan = '#007387'
-blue = '#4000ff'
-magenta = '#c900c8'
 black = '#000000'
+red = '#fd0000'
+green = '#008e00'
+yellow = '#825c00'
+blue = '#2300ff'
+magenta = '#c200d8'
+cyan = '#007584'
 white = '#636363'
 
 [colors.normal]
-red = '#ff0054'
-yellow = '#ef9900'
-green = '#42d100'
-cyan = '#00dee7'
-blue = '#008fff'
-magenta = '#e572ff'
 black = '#222222'
+red = '#ff0071'
+green = '#6acc00'
+yellow = '#f59400'
+blue = '#0099ff'
+magenta = '#d97dff'
+cyan = '#00ece7'
 white = '#aeaeae'
 
 [colors.bright]
-red = '#ff5a00'
-yellow = '#c8b100'
-green = '#00d48d'
-cyan = '#00c8ff'
-blue = '#a490ff'
-magenta = '#ff54d2'
 black = '#636363'
+red = '#ff4400'
+green = '#00d57d'
+yellow = '#cead00'
+blue = '#968cff'
+magenta = '#ff4ce2'
+cyan = '#00cfff'
 white = '#ffffff'
 
 [colors.primary]
 background = '#000000'
-dim_foreground = '#636363'
 foreground = '#aeaeae'
+dim_foreground = '#636363'
 bright_foreground = '#ffffff'
 
