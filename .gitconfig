@@ -67,7 +67,7 @@
 [status]
 	short = false
 	showStash = true
-	submoduleSummary = true
+	submoduleSummary = false
 	branch = true
 	aheadBehind = true
 	showUntrackedFiles = no
@@ -80,8 +80,6 @@
 	autoStash = true
 [init]
 	defaultBranch = main
-[index]
-	skipHash = false
 [clean]
 	requireForce = false
 [branch]
